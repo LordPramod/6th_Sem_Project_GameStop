@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #F6F7F9;
+    
+}
+/* Nav Bar Styling */
+.container-header{
+    background-color: #1C4F49;
+    border: 1px solid black;
+    position: sticky;
+    top:0;
+    height: 65px;
+    z-index:inherit;
+}
+.container-center input{
+    position:relative;
+    top: 10px;
+    left: 50vh;
+    width:675px;
+    height: 45px;
+    border-radius: 8px;
+    text-align: left 10px;
+    /* font-size: 10px; */
+}
+.container-right {
+    display: flex;
+}
+.search i{
+    position: absolute;
+    right: 485px;
+    top: 32px;
+    transform: scaleX(-1);
+}
+.icon-cart{
+    position: absolute;
+    right: 405px;
+    top: 26px;
+
+}
+.container-nav{
+    display: flex;
+    position: absolute;
+    left: 225px;
+}
+.container-nav ul{
+    display: flex;
+    position: relative;
+    top: 25px;
+    align-items: center;
+
+}.container-nav ul li{
+    list-style: none;
+    margin-right: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    
+    
+}
+.container-nav ul li a{
+    text-decoration: none;
+    color: #7F7F7F;
+    
+}
+.container-nav ul li a:hover{
+    color: #FC671A
+}
+/* .nav-gif img{
+    display: block;
+    margin-top: 18px;
+
+} */
+/* Nav Bar Styling ends here */
+span{
+    position: absolute;
+    left:190px;
+    font-size: 2rem;
+    top: 10px;
+    color: #7F7F7F;
+
+}
+/* Product  category styling */
+
+/* Test */
+
+  /* Test ends here  */
