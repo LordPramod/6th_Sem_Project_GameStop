@@ -13,12 +13,26 @@ body{
 }
 /* Nav Bar Styling */
 .container-header{
-    background-color: #1C4F49;
-    border: 1px solid black;
+    background: crimson;
+    border: none;
     position: sticky;
     top:0;
     height: 65px;
     z-index:inherit;
+}
+.container-logo img{
+    width: 150px;
+    margin-top: 5px;
+    margin-left: 30px;
+    text-align: center;
+}
+.container-logo a{
+    position: absolute;
+    left:190px;
+    font-size: 2rem;
+    top: 10px;
+    color: #7F7F7F;
+
 }
 .container-center input{
     position:relative;
@@ -33,17 +47,23 @@ body{
 .container-right {
     display: flex;
 }
+.icon-container{
+    display: flex;
+    margin-left: 1115px;
+    margin-top: -20px;
+
+}
 .search i{
-    position: absolute;
-    right: 485px;
-    top: 32px;
+    margin-left: -90px;
     transform: scaleX(-1);
 }
 .icon-cart{
-    position: absolute;
-    right: 405px;
-    top: 26px;
+    color: white;
+    margin-left: -20px;
+}
 
+.icon-wallet i{
+    padding: 0px 40px;
 }
 .container-nav{
     display: flex;
@@ -70,7 +90,16 @@ body{
     
 }
 .container-nav ul li a:hover{
-    color: #FC671A
+    color: crimson;
+}
+.account-content-container {
+    margin-top: -10px;
+    margin-left: 10px;
+    
+}
+.account-content-container a{
+    color: white;
+    text-decoration: none;
 }
 /* .nav-gif img{
     display: block;
@@ -78,14 +107,6 @@ body{
 
 } */
 /* Nav Bar Styling ends here */
-span{
-    position: absolute;
-    left:190px;
-    font-size: 2rem;
-    top: 10px;
-    color: #7F7F7F;
-
-}
 /* Product  category styling */
 
 /* Test */

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=1" />
 </head>
 
 <body>
@@ -18,10 +18,10 @@
                     <a href="#"><img src="../pages/index.php" alt="">Logo here</a><br>
                     <div class="icon-location">
 
-                        <i class="fa fa-sharp fa-light fa-location-dot fa-lg" style="color: #FC671A;"></i><br>
-                        <i class="fa fa-thin fa-phone fa-lg" style="color: #FC671A;"></i><br>
-                        <i class="fa fa-light fa-id-card fa-lg" style="color:#FC671A"></i><br>
-                        <i class="fa fa-light fa-envelope fa-lg" style="color: #FC671A;"></i>
+                        <i class="fa fa-sharp fa-light fa-location-dot fa-lg" style="color: crimson;"></i><br>
+                        <i class="fa fa-thin fa-phone fa-lg" style="color: crimson;"></i><br>
+                        <i class="fa fa-light fa-id-card fa-lg" style="color:crimson"></i><br>
+                        <i class="fa fa-light fa-envelope fa-lg" style="color: crimson;"></i>
                     </div>
                     <div class="detail">
                         <p>Kathmandu, Nepal</p>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="footer-payment-container">
-                <h2>Pay Vai</h2>
+                <h2>Pay Via</h2>
                 <div class="payment-images">
                     <img src="../assets/images/new khalti.png" alt="">
                     <img src="../assets/images/imepay.png" alt="">

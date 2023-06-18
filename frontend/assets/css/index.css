@@ -95,7 +95,7 @@ span{
 }
 .products-container{
     display: flex;
-    border: 5px solid red;
+    /* border: 5px solid red; */
     flex-wrap: nowrap;
     position: relative;
     top:40px;

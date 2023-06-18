@@ -5,7 +5,8 @@ body{
     width: 80%;
     margin-left: 195px;
     margin-right: 195px;
-    margin-top: 85vh;
+    margin-top: 12rem;
+
 
 
 }
@@ -21,7 +22,7 @@ body{
     /* width: 160px; */
     width: 270px;
     margin-top: 20px;
-    border: 3px solid red;
+    /* border: 3px solid red; */
     box-shadow: 5px 5px 15px 5px #FFFFFF;
     margin-bottom: 20px;
     
@@ -57,6 +58,8 @@ body{
     display: inline;
     border-bottom: 6px solid red;
     border-radius: 10px;
+    
+    
 }
 .product-heading {
     /* padding-bottom: 10px; */

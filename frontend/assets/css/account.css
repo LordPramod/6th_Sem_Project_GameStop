@@ -1,0 +1,34 @@
+section{
+
+}
+/* Account */
+#account-from{
+    width: 50%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 20px;
+}
+.form-group input {
+    margin: 5px auto;
+}
+/* #account-form #change-pass-btn{
+    color: #FFFFFF;
+    background-color: #000000;
+} */
+#account-form #change-password-btn:hover{
+    background-color: crimson;
+}
+.account-info #order-btn,#logout-btn{
+    color: #111111;
+    text-decoration: none;
+
+}
+.form-group #change-pass-btn{
+    background-color: #000000; 
+    color: #ffffff;
+}
+.form-group #change-pass-btn :hover{
+    background-color: crimson;
+    color: black;
+
+}

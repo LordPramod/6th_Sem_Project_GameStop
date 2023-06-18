@@ -16,12 +16,13 @@
   <?php include '../layouts/nav-bar.php'; ?>
 
   <?php
+  // include '../layouts/carousel.php';
+  ?>
+
+  <?php
   include '../layouts/card.php';
   ?>
 
-  <div class="slider-contaienr">
-    <!-- Slider goes here -->
-  </div>
 
   <?php
   include '../layouts/footer.php';

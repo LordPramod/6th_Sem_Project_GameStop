@@ -1,8 +1,8 @@
 /* all similar content styling codes */
 *{
     box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     font-family: sans-serif;
 
 }
@@ -11,7 +11,7 @@ html{
 }
 /* Login Page styling Codes */
 body{
-    background-color: #1C4F49;
+    background-color: #FFFFFF;
     margin: 10px 0px  10px 10px;
       padding: 0;
       height: 100vh;
@@ -20,7 +20,7 @@ body{
 
     .left {
       flex: 1;
-      background-color: #F5F3EF;
+      background-color: crimson;
       border-top-left-radius: 16px;
       border-bottom-left-radius: 16px;
       background-image: url(../images/login_page_background.jpg);
@@ -29,8 +29,7 @@ body{
 
     .right {
         flex: 1;
-        background-color: #1C4F49;
-      /* Replace #00ff00 with your desired color */
+        background-color: #FFFFFF;
     }
     .right .form-body{
         position: absolute;
@@ -43,12 +42,12 @@ body{
         font-size: 3rem;
         position: relative;
         top: -30px;
-        color: #FFFFFF;
+        color: crimson;
     }
     .login-page{
         position: relative;
         top: -20px;
-        color: #FFFFFF;
+        color: #000000;
         font-size: 1.5rem;
         
     }
@@ -57,29 +56,29 @@ body{
         padding: 8px;
         border-radius: 8px;
         background-color: transparent;
-        border-color: #F5F3EF;
-        color: #F5F3EF;
+        border-color: #000000;
+        color: crimson;
         font-size: 1rem;
         
     }
     .form-control label {
         position:relative;
         left: 10px;
-        color: #FFFFFF;
+        color: #000000;
         font-size: 1.3rem;
     }
     .loggedin{
-        color: #FFFFFF;
+        color: #000000;
         margin-top: 10px
     }
     .btn-login input{
         position: relative;
         top: 4vh;
         left: 10vh;
-        background-color: #FC671A;
-        color: #F5F3EF;
+        background-color: #000000;
+        color: #000000;
         padding: 10px  90px;
-        border: 1px solid #FC671A;
+        border: none;
         font-size: 1.5rem;
     }
     .forgot span a{
@@ -88,13 +87,16 @@ body{
         position: relative;
         top: 6vh;
         left: 17vh;
+        color: #000000;
     }
     .btn-login input:hover{
-        background-color: transparent;
-        color: #F5F3EF;
+        background-color: crimson;
+        color: #000000;
         border-color: transparent;
     }
-    .forgot span a{
-        color: #F5F3EF;
-
+    .forgot span a :hover{
+        color: crimson;
+    }
+    .p{
+        color: crimson;
     }
