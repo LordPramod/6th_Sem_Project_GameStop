@@ -1,7 +1,12 @@
 <?php
 include '../layouts/nav-bar.php';
+include '../../backend/config/connection.php';
 ?>
+<?php
+$stmt = "SELECT * FROM products_details";
+$response = mysqli_query($connect, $stmt);
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +22,12 @@ include '../layouts/nav-bar.php';
 <body>
     <div class="border-container">
 
-        <h3> Google Account with 100$ Balance </h3>
+        <h3 class=""> Google Account with 100$ Balance </h3>
     </div>
     <div class="product-content-container ">
+
         <div class="row ">
             <div class="col-6 mt-3">
-
                 <div class="image-container">
                     <img src="../assets/images/GOOGLE ACCOUNT 100$ .jpg" alt="google-gift-card-100 (US)">
                 </div>
@@ -30,17 +35,18 @@ include '../layouts/nav-bar.php';
             </div>
             <div class="col-6 mt-3">
                 <div class="content-container">
-                    <p>Delivery mode: </p>
-                    <p>Delivery Time:</p>
-                    <p>Platform:</p>
-                    <p>Publisher:</p>
-                    <p>Developer:</p>
-                    <p>Gener:</p>
-                    <p>Price goes here</p>
-                    <input type="number" name="amt_order" id="" class="form-control ">
-                    <a href="">
-                        <div class="btn btn-primary " id="btn_buynow">Add to Cart</div>
-                    </a>
+                    <form action="insertCart.php" method="post">
+
+                        <p>Price goes here</p>
+                        <input type="hidden" name="Pproduct" value="Google-Gift-Card 100">
+                        <input type="hidden" name="Pprice" value="1000">
+                        <input type="number" name="Pamount" id="" value="min='1' max='5'" class=" form-control ">
+
+
+                        <input type="submit" class="btn btn-dark" value="Add to Cart" id="btn_buynow" name="addCart">
+
+
+                    </form>
                 </div>
             </div>
         </div>

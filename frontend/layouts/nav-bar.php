@@ -1,6 +1,6 @@
 <?php
-session_start();
 
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +43,7 @@ session_start();
                 <div class="account-content-container">
                     <a href="#">
                         <h5 style="font-size: 0.9rem;">Hello,
-                            <?php echo $_SESSION['lname'] ?><br>
+                            <?php echo $_SESSION['name'] ?><br>
                             My Account
                         </h5>
                     </a>

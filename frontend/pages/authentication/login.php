@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,19 +55,20 @@
                             $query = "SELECT * FROM user_info";
                             $response2 = mysqli_query($connect, $query);
                             $response = mysqli_query($connect, $sql);
+                            // getting Name From Database to use in Session
                             while ($row = mysqli_fetch_assoc($response2)) {
                                 $db_email = $row['email'];
                                 if ($email == $db_email) {
                                     $name = $row['name'];
                                 }
                             }
-                            if (mysqli_fetch_row($response) > 0 && $_POST['usertype'] == "user") {
-                                session_start();
+                            // Fetch the data from database to vaidate login
+                            $response3 = mysqli_fetch_row($response);
+                            if ($response3 > 0 && $_POST['usertype'] == "user") {
                                 $_SESSION['name'] = $name;
                                 header('location:../index.php');
                             }
-                            elseif (mysqli_fetch_row($response) > 0 && $_POST['usertype'] == "admin") {
-                                session_start();
+                            if ($response3 > 0 && $_POST['usertype'] == "admin") {
                                 $_SESSION['name'] = $name;
                                 header("location:../admin/dashboard.php");
                             } else {

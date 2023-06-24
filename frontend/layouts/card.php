@@ -3,7 +3,7 @@ include "../../backend/config/connection.php";
 
 ?>
 <?php
-$stmt = "SELECT * FROM products_details";
+$stmt = "SELECT * FROM pdt_category";
 $result = mysqli_query($connect, $stmt);
 ?>
 
@@ -29,16 +29,18 @@ $result = mysqli_query($connect, $stmt);
         </div>
         <div class="products-container">
             <?php while ($row = mysqli_fetch_assoc($GLOBALS['result'])) { ?>
-                <!-- image Container -->
-                <div class="image-container">
-                    <a href="../pages/googlegiftcards.php">
-                        <img src="../assets/images/google=giftcard_100$.jpg" alt="" srcset="">
-                    </a>
-                    <div class="product-title-container">
-                        <!-- <a href="/frontend/pages/googlegiftcard.php">Google Gift Card</a> -->
-                        <a href="../pages/googlegiftcards.php"><?php echo $row['pdt_name']; ?></a>
-                    </div>
+            <!-- image Container -->
+            <div class="image-container">
+                <a href="../pages/<?php echo $row['pdt_category_location']; ?>">
+                    <img src="../assets/images/<?php echo $row['products_category_image']; ?>" alt="Google-Gift-Card"
+                        srcset="">
+                </a>
+                <div class="product-title-container">
+                    <!-- <a href="/frontend/pages/googlegiftcard.php">Google Gift Card</a> -->
+                    <a
+                        href="../pages/<?php echo $row['pdt_category_location']; ?>"><?php echo $row['pdt_category_name']; ?></a>
                 </div>
+            </div>
             <?php } ?>
         </div>
 

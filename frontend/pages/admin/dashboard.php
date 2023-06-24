@@ -1,7 +1,7 @@
 <?php
-if (!$_SESSION['username']) {
-    header("location:./login.php");
-}
+// if (!$_SESSION['username']) {
+//     header("location:./login.php");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +25,9 @@ if (!$_SESSION['username']) {
                 <i class="fa fa-user-shield"></i>
                 Hello, | <?php
                             session_start();
-                            echo $_SESSION['username'] . " " . " "; ?>
+                            echo $_SESSION['name'] . " " . " "; ?>
                 <i class="fa fa-sign-out-alt"></i>
-                <a href="./logout.php" class="text-decoration-none text-white">Logout</a> |
+                <a href="../logout.php" class="text-decoration-none text-white">Logout</a> |
                 <a href="" class="text-decoration-none text-white">Userpanel</a>
             </span>
         </div>
@@ -37,7 +37,7 @@ if (!$_SESSION['username']) {
     </div>
     <div class="col-md-6 text-center m-auto" id="admin-menu">
         <a href="./product/index.php" class="text-decoration-none  fs-4 fw-bold px-5">Add Product</a>
-        <a href="./login.php" class="text-decoration-none fs-4 fw-bold px-5">Add User</a>
+        <a href="" class="text-decoration-none fs-4 fw-bold px-5">Add User</a>
     </div>
 
 </body>

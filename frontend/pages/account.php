@@ -22,7 +22,7 @@ include "../layouts/nav-bar.php";
                     <p>Name </p>
                     <p>Email</p>
                     <p><a href="" id="order-btn">Your Orders</a></p>
-                    <p><a href="" id="logout-btn">Log Out</a></p>
+                    <p><a href="./logout.php" id="logout-btn">Log Out</a></p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 my-4 py-4">
