@@ -25,21 +25,20 @@ include '../../backend/config/connection.php';
     <div class="container" id="card-container">
         <div class="row">
             <?php while ($row = mysqli_fetch_assoc($GLOBALS['response'])) { ?>
-            <!-- image Container -->
+                <!-- image Container -->
 
-            <div class="col-lg-3 col-md-6" id="card">
-                <div class="card">
-                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="../assets/images/<?php echo $row['product_image'];?>" class="img-fluid" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><a href=""><?php echo $row["pdt_name"]; ?></a></h5>
-                        <p class="card-text"> <a href=""><?php echo "Rs." . " " . $row["pdt_price"]; ?></a></p>
-                        <a href="./<?php echo $row['product_location']; ?>" class="btn btn-primary "
-                            style="align-items: center;" id="btn-view">View</a>
+                <div class="col-lg-3 col-md-6" id="card">
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img src="../assets/images/<?php echo $row['product_image']; ?>" class="img-fluid" />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href=""><?php echo $row["pdt_name"]; ?></a></h5>
+                            <p class="card-text"> <a href=""><?php echo "Rs." . " " . $row["pdt_price"]; ?></a></p>
+                            <a href="./<?php echo $row['product_location']; ?>" class="btn btn-primary " style="align-items: center;" id="btn-view">View</a>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php } ?>
         </div>
     </div>

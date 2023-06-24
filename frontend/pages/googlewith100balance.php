@@ -39,7 +39,7 @@ include '../layouts/nav-bar.php';
                     <p>Price goes here</p>
                     <input type="number" name="amt_order" id="" class="form-control ">
                     <a href="">
-                        <div class="btn btn-primary " id="btn_buynow">Buy Now</div>
+                        <div class="btn btn-primary " id="btn_buynow">Add to Cart</div>
                     </a>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <?php
-// if (!$_SESSION['username']) {
-//     header("location:./login.php");
-// }
+if (!$_SESSION['username']) {
+    header("location:./login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

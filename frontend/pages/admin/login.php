@@ -28,12 +28,13 @@
 
                     <label for="Password">Password: </label><br>
                     <input type="password" name="pass" id="Password" size="40"><br>
-                    <input class="checkbox" type="checkbox" name="remember" id=""> <span>Remember me</span><br>
 
-                    <div class="btn-container mb-3">
-                        <input type="submit" value="Login" name="login">
+                </div>
+                <input class="checkbox" type="checkbox" name="remember" id=""> <span>Remember me</span><br>
 
-                    </div>
+                <div class="btn-container mb-3">
+                    <input type="submit" value="Login" name="login">
+
                 </div>
 
                 <?php
@@ -52,13 +53,12 @@
                             $name = $row['name'];
                         }
                     }
-
                     if (mysqli_fetch_row($response) > 0) {
                         session_start();
-                        $_SESSION['username'] = "$name";
+                        $_SESSION['username'] = $name;
                         header("location:../../pages/admin/dashboard.php");
                     } else {
-                        echo "<script> alert('Username Password Doesn matched'); </script>";
+                        echo "<script> alert('Username Password Does.n't matched'); </script>";
                     }
                 } ?>
 

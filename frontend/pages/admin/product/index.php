@@ -16,7 +16,7 @@
                 <div class="mb-3 text-center">
                     <h1>Product Details</h1>
                 </div>
-                <form action="insert.php" method="post">
+                <form action="insert.php" method="post" enctype="multipart/form-data">
                     <div class="form-outline mb-2">
                         <label class="form-label" for="form3Example1cg">Product Name</label>
                         <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="Pname" placeholder="Enter Product Name" />
