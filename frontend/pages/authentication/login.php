@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,7 @@
     <title>Document</title>
     <!-- linking css for styling -->
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/style.css?v=1">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
 <body>
@@ -44,6 +45,9 @@
                     <div class="loggedin">
                         <input type="checkbox" name="remember" id=""><span>Keep me logged in</span><br>
                     </div>
+                    <div class="signup">
+                        <p>Dont Have Account Yet ? <a href="./register.php">Click Here</a></p>
+                    </div>
                     <div class="validate">
                         <?php
                         include '/xampp/htdocs/GameStop/backend/config/connection.php';
@@ -60,17 +64,20 @@
                                 $db_email = $row['email'];
                                 if ($email == $db_email) {
                                     $name = $row['name'];
+                                    $id = $row['id'];
                                 }
                             }
                             // Fetch the data from database to vaidate login
                             $response3 = mysqli_fetch_row($response);
                             if ($response3 > 0 && $_POST['usertype'] == "user") {
                                 $_SESSION['name'] = $name;
+                                $_SESSION['id'] = $id;
+
                                 header('location:../index.php');
                             }
                             if ($response3 > 0 && $_POST['usertype'] == "admin") {
                                 $_SESSION['name'] = $name;
-                                header("location:../admin/dashboard.php");
+                                header("location:../admin/homepage.php");
                             } else {
                                 // echo 'Username and password doesnot matched';
                                 echo "<script> alert('Username Password Doesn matched'); </script>";

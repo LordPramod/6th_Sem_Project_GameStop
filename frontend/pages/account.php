@@ -1,5 +1,8 @@
 <?php
 include "../layouts/nav-bar.php";
+include '../../backend/config/connection.php';
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,15 +16,23 @@ include "../layouts/nav-bar.php";
 </head>
 
 <body>
+    <?php
+    $stmt = "SELECT * FROM  user_info where id='{$_SESSION['id']}'";
+    $response = mysqli_query($connect, $stmt);
+    $row = mysqli_fetch_assoc($response);
+
+
+
+    ?>
     <section class="my-5 py-5">
         <div class="row container mx-auto">
             <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 ">
                 <h3 class="font-weight-bold">Account info</h3>
                 <hr class="mx-auto">
                 <div class="account-info">
-                    <p>Name </p>
-                    <p>Email</p>
-                    <p><a href="" id="order-btn">Your Orders</a></p>
+                    <p>Name <?php echo $row['name']; ?></p>
+                    <p>Email <?php echo $row['email']; ?></p>
+                    <p><a href="#" id="order-btn">Your Orders</a></p>
                     <p><a href="./logout.php" id="logout-btn">Log Out</a></p>
                 </div>
             </div>

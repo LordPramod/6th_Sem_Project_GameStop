@@ -1,9 +1,5 @@
 <?php
-include "../../backend/config/connection.php";
-@session_start();
-$stmt = mysqli_query($connect, "SELECT COUNT(*)  as total FROM pdt_cart where user_id = {$_SESSION['id']}");
-$row = mysqli_fetch_assoc($stmt);
-$row_count = $row['total'];
+
 
 error_reporting(0);
 ?>
@@ -17,11 +13,6 @@ error_reporting(0);
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/nav-bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-        .icon-cart span {
-            margin-top: -40px;
-        }
-    </style>
 
 </head>
 
@@ -43,22 +34,18 @@ error_reporting(0);
                 </div>
                 <div class="icon-cart">
                     <a href="../layouts/cart.php"><i class="fa fa fa-light fa-cart-shopping fa-xl" style="color:#ffffff;"></i></a>
-                    <span><?php echo $row_count; ?></span>
                 </div>
                 <div class="icon-wallet">
                     <a href="#"><i class="fa fa-duotone fa-wallet fa-xl" style="color: #ffffff;"></i></a>
                 </div>
                 <div class="icon-account">
-                    <a href="../pages/account.php"><i class="fa fa-duotone fa-user fa-xl" style="color: #ffffff;"></i></a>
+                    <a href="../pages/authentication/login.php"><i class="fa fa-duotone fa-user fa-xl" style="color: #ffffff;"></i></a>
                 </div>
                 <div class="account-content-container">
-                    <a href="#">
-                        <h5 style="font-size: 0.9rem;">Hello,
-                            <?php echo $_SESSION['name'] ?><br>
-                            My Account
-                        </h5>
-                    </a>
-                    <a href="#"><span></span></a>
+                    <p>
+                    </p>
+                    <span> <a href="../pages/authentication/login.php">
+                            Hello,<br>Sign in</a><span>
                 </div>
             </div>
 

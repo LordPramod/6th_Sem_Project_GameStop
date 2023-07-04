@@ -1,9 +1,8 @@
 <?php
-include "../layouts/nav-bar-config.php";
 include "../../backend/config/connection.php";
-// session_start();
-$query = "SELECT * FROM products_details where products_category = '3'";
-$respone = mysqli_query($connect, $query);
+include '../layouts/nav-bar-config.php';
+$stmt = mysqli_query($connect, "SELECT * FROM products_details where products_category='3'");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +25,7 @@ $respone = mysqli_query($connect, $query);
     }
 
     .card img {
-        height: 420px;
+        height: 400px;
     }
     </style>
 </head>
@@ -34,7 +33,7 @@ $respone = mysqli_query($connect, $query);
 <body>
     <div class="container">
         <div class="row">
-            <?php while ($row = mysqli_fetch_assoc($respone)) { ?>
+            <?php while ($row = mysqli_fetch_assoc($stmt)) { ?>
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="../assets/images/<?php echo $row['product_image']; ?>"

@@ -1,5 +1,15 @@
 <?php
-include "./nav-bar.php";
+include "../../frontend/layouts/nav-bar-config.php";
+include "../../backend/config/connection.php";
+?>
+<!-- Statement to Fetch Data of single user -->
+<?php
+session_start();
+if (isset($_SESSION['name'])) {
+    $stmt = mysqli_query($connect, "SELECT * FROM pdt_cart where user_id = {$_SESSION['id']}");
+} else {
+    header('location:../pages/authentication/login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,27 +45,33 @@ include "./nav-bar.php";
                         <th>Product Price</th>
                         <th>Product Quantity</th>
                         <th>Total Price</th>
-                        <th>Update</th>
                         <th>Delete</th>
                     </thead>
-                    <tbody>
-                        <?php
-                        if (isset($_SESSION['cart'])) {
-                            foreach ($_SESSION['cart'] as $value) { ?>
-                        <tr>
-                            <td></td>
-                            <td>$value[ProductName]</td>
-                            <td>$value[ProductPrice]</td>
-                            <td>$value[ProductQuantity]</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <?php } ?>
-                        <?php }
-                        ?>
+                    <tbody class="bg-light">
 
+
+                        <?php
+                        $i = 1;
+                        while ($row = mysqli_fetch_assoc($stmt)) { ?>
+                        <tr>
+                            <td><?php echo $i ?></td>
+                            <td><?php echo $row['product_name']; ?></td>
+                            <td><?php echo $row['product_price']; ?></td>
+                            <td> <input type="number" name="quantity" min='1' max="5"
+                                    value="<?php echo $row['product_quantity']; ?>" id=""></td>
+                            <td><?php echo $row['total_amount']; ?></td>
+                            <td><a
+                                    href="../../backend//functions/deleteCart.php?id=<?php echo $row['cart_id'];?>">Delete</a>
+                            </td>
+                            <td></td>
+
+                        </tr>
+                        <?php $i++;
+                        } ?>
                     </tbody>
                 </table>
+                <a href="../layouts/payment.php"><input type="submit" class="btn" id="checkout-btn"
+                        value="Check out"></a>
             </div>
         </div>
     </div>
@@ -64,5 +80,5 @@ include "./nav-bar.php";
 
 </html>
 <?php
-include "./footer.php";
+include "../../frontend/layouts/footer.php";
 ?>

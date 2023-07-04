@@ -2,10 +2,11 @@ body{
     background-color:#F6F7F9;
 }
 .product-container{
-    width: 80%;
+    width: auto;
     margin-left: 195px;
     margin-right: 195px;
     margin-top: 12rem;
+    /* border: 3px solid red; */
 
 
 

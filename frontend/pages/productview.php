@@ -1,10 +1,12 @@
 <?php
-include '../layouts/nav-bar.php';
+include '../layouts/nav-bar-config.php';
 include '../../backend/config/connection.php';
 ?>
 <?php
-$stmt = "SELECT * FROM products_details";
+$id = $_GET['id'];
+$stmt = "SELECT * FROM products_details where id = '$id'";
 $response = mysqli_query($connect, $stmt);
+$row = mysqli_fetch_assoc($response);
 
 ?>
 <!DOCTYPE html>
@@ -16,31 +18,31 @@ $response = mysqli_query($connect, $stmt);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameStop</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/googlegiftcard100.css?v=1">
+    <link rel="stylesheet" href="../assets/css/productview.css">
 </head>
 
 <body>
     <div class="border-container">
 
-        <h3 class=""> Google Account with 100$ Balance </h3>
+        <h3 class="fs-5"> <?php echo $row['pdt_name']; ?></h3>
     </div>
     <div class="product-content-container ">
 
         <div class="row ">
             <div class="col-6 mt-3">
                 <div class="image-container">
-                    <img src="../assets/images/GOOGLE ACCOUNT 100$ .jpg" alt="google-gift-card-100 (US)">
+                    <img src="../assets/images/<?php echo $row['product_image']; ?>" alt="Product Image">
                 </div>
 
             </div>
             <div class="col-6 mt-3">
                 <div class="content-container">
-                    <form action="insertCart.php" method="post">
-
-                        <p>Price goes here</p>
-                        <input type="hidden" name="Pproduct" value="Google-Gift-Card 100">
-                        <input type="hidden" name="Pprice" value="1000">
-                        <input type="number" name="Pamount" id="" value="min='1' max='5'" class=" form-control ">
+                    <form action="../../backend/functions/insertCart.php" method="post">
+                        <h2><?php echo $row['pdt_name']; ?></h2>
+                        <input type="hidden" name="Pproduct" value="<?php echo $row['pdt_id']; ?>">
+                        <input type="hidden" name="Pproduct" value="<?php echo $row['pdt_name']; ?>">
+                        <input type="hidden" name="Pprice" value="<?php echo $row['pdt_price']; ?>">
+                        <input type="number" name="Pamount" id="" value="1" max="5" min="1" class=" form-control ">
 
 
                         <input type="submit" class="btn btn-dark" value="Add to Cart" id="btn_buynow" name="addCart">
@@ -49,10 +51,6 @@ $response = mysqli_query($connect, $stmt);
                     </form>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            HELLO WORLD
         </div>
     </div>
 

@@ -28,6 +28,7 @@ body{
     border-radius: 10px;
     margin-top: -80px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: auto;
 }
 .card-body h5 a , p a{
     text-decoration: none;
@@ -43,13 +44,23 @@ body{
     /* border: 8px solid red; */
 }
 .row{
-/* border: 8px solid green; */
-
+    
 }
 #card{
     /* border: 9px solid black; */
     margin: 10px 0;
 }
-#card img {
+.card-body #btn-view{
+    background-color: #111111;
+    border: none;
+    padding: 10px 30px;
+}
+.card-body #btn-view:hover{
+    background-color: crimson;
+    
+}
+#img img{
+    height: 300px;
+    /* border: 8px solid green; */
 
 }

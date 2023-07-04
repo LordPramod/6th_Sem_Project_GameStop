@@ -1,8 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['name'])) {
-  header("location:./authentication/login.php");
-} ?>
+include "../layouts/nav-bar-config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,20 +16,8 @@ if (!isset($_SESSION['name'])) {
 
 <body>
 
-  <?php include '../layouts/nav-bar.php'; ?>
+  <?php include '../layouts/card.php'; ?>
 
-  <?php
-  // include '../layouts/carousel.php';
-  ?>
-
-  <?php
-  include '../layouts/card.php';
-  ?>
-
-
-  <?php
-  include '../layouts/footer.php';
-  ?>
 </body>
 
-</html
+</html <?php include '../layouts/footer.php'; ?>

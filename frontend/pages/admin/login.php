@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamestop</title>
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/admin-css/admin-login.css?v=1">
+    <link rel="stylesheet" href="../../assets/css/admin-css/admin-login.css">
 </head>
 
 <body>

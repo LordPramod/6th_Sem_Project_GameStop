@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <div class="footer-content-container">
             <div class="footer-logo-detail-container">
                 <div class="logo">
-                    <a href="#"><img src="../pages/index.php" alt="">Logo here</a><br>
+                    <a href="../assets/images/500px-GameStop.svg.png"><img src="../pages/index.php" alt=""></a><br>
                     <div class="icon-location">
 
                         <i class="fa fa-sharp fa-light fa-location-dot fa-lg" style="color: crimson;"></i><br>
@@ -40,11 +40,11 @@
             </div>
             <div class="footer-social-container">
                 <h2>Connect With Us</h2>
-                <a href="">
+                <a href="https://www.facebook.com/" target="_blank">
                     <i class=" fa fa-brands fa-square-facebook fa-2xl"></i>
 
                 </a>
-                <a href="">
+                <a href="https://www.instagram.com/" target="_blank">
 
                     <i class=" fa fa-brands fa-instagram fa-2xl"></i>
                 </a>

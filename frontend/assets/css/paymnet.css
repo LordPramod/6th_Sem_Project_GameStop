@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: sans-serif;
+}
+.main-container{
+    display: flex;
+    border: black 6px solid ;
+    height: 90vh;
+    width: 1300px;
+    margin: 0 auto;
+    margin-top: 85px;
+}
+.order-container{
+    border: 4px red solid;
+    width: 650px;
+}
+.payment-container{
+    border: 4px green solid;
+    width: 650px;
+}

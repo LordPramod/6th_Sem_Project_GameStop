@@ -101,3 +101,10 @@ body{
     .p{
         color: crimson;
     }
+    .signup  {
+        margin-left: 20px;
+        text-decoration: none;
+    }
+    .signup p a {
+        text-decoration: none;
+    }
