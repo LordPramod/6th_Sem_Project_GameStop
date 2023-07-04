@@ -31,6 +31,13 @@ body{
     border-radius: 10px;
     margin-right: 20px;
 }
+.revenue-heading{
+    display: flex;
+}
+.revenue-heading i {
+    margin-top: 30px;
+    margin-left: 80px;
+}
 .customer-container{
     border-radius: 10px;
     background-color: #111111;
@@ -74,7 +81,7 @@ body{
     margin-left: 80px;
 }
 .customer-container h3{
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 30px;
 }
 .order-container{
@@ -101,6 +108,6 @@ body{
     margin-top: 10px;
 }
 .order-container h3{
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 30px;
 }

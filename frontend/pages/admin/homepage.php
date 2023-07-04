@@ -30,8 +30,10 @@ $order_row_count = mysqli_num_rows($customer_count);
             </div>
             <div class="detail-container">
                 <div class="revenue-container">
-                    <h6>Total Revenue</h6>
-                    <i class="fa fa-sharp fa-regular fa-circle-dollar " style="color: white;"></i>
+                    <div class="revenue-heading">
+                        <h6>Total Revenue</h6>
+                        <i class="fa-solid fa-dollar-sign fa-lg "></i>
+                    </div>
                     <h3> $10,000 </h3>
                 </div>
                 <div class="customer-container">
