@@ -8,7 +8,6 @@ if (isset($_POST["upload"]) && isset($_FILES['Pimage'])) {
     $filename = $product_image['name'];
     $tmp_name = $product_image['tmp_name'];
     $file = "../../../assets/images/" . $filename;
-    echo $filename;
     move_uploaded_file($tmp_name, $file);
     $stmt = "INSERT INTO products_details (pdt_name ,pdt_price,product_image,products_category) VALUES ('$product_name','$product_price','$filename','$product_category')";
     $response = mysqli_query($connect, $stmt);

@@ -18,7 +18,7 @@ body{
     position: sticky;
     top:0;
     height: 65px;
-    z-index:inherit;
+    /* z-index:inherit; */
 }
 .container-logo img{
     width: 150px;
@@ -43,6 +43,21 @@ body{
     border-radius: 8px;
     text-align: left 10px;
     /* font-size: 10px; */
+}
+.btn-search input {
+    width: 80px;
+    position: absolute;
+    margin-top: 8px;
+    margin-left:570px ;
+    height: 30px;
+    background: transparent;
+    border: none;
+}
+.btn-search input:hover{
+    background-color: crimson;
+    color: #F6F7F9;
+    border: 1px solid crimson;
+    border-radius: 10px;
 }
 .container-right {
     display: flex;

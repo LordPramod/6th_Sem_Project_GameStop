@@ -28,12 +28,12 @@ session_start();
                 <div class="form-div">
                     <label for="email">Email </label><br>
                     <input type="email" name="email" placeholder="Email address" size="50vh" autocomplete="new-password"
-                        class="form-contol"><br>
+                        class="form-contol" required><br>
 
                     <div class="form-div">
                         <label for="password">Password </label><br>
-                        <input type="password" name="password" size="50vh" placeholder="Password"
-                            class="form-contol"><br>
+                        <input type="password" name="password" size="50vh" placeholder="Password" class="form-contol"
+                            required><br>
                     </div>
                     <div class="form-group mt-1">
                         <select name="usertype" class="form-select" id="usertype">
@@ -42,9 +42,6 @@ session_start();
                         </select>
                     </div>
 
-                    <div class="loggedin">
-                        <input type="checkbox" name="remember" id=""><span>Keep me logged in</span><br>
-                    </div>
                     <div class="signup">
                         <p>Dont Have Account Yet ? <a href="./register.php">Click Here</a></p>
                     </div>
@@ -54,41 +51,46 @@ session_start();
                         if (isset($_POST['confirm'])) {
                             $email = $_POST['email'];
                             $pass = $_POST['password'];
+                            // Change 
+                            $pass = md5($pass);
+                            // 
                             $usertype = $_POST['usertype'];
                             $sql = "SELECT * FROM user_info where email = '$email' and password = '$pass' and usertype = '$usertype'";
                             $query = "SELECT * FROM user_info";
                             $response2 = mysqli_query($connect, $query);
                             $response = mysqli_query($connect, $sql);
                             // getting Name From Database to use in Session
-                            while ($row = mysqli_fetch_assoc($response2)) {
-                                $db_email = $row['email'];
-                                if ($email == $db_email) {
-                                    $name = $row['name'];
-                                    $id = $row['id'];
-                                }
-                            }
-                            // Fetch the data from database to vaidate login
-                            $response3 = mysqli_fetch_row($response);
-                            if ($response3 > 0 && $_POST['usertype'] == "user") {
-                                $_SESSION['name'] = $name;
-                                $_SESSION['id'] = $id;
+                            if (mysqli_num_rows($response) > 0) {
 
-                                header('location:../index.php');
-                            }
-                            if ($response3 > 0 && $_POST['usertype'] == "admin") {
-                                $_SESSION['name'] = $name;
-                                header("location:../admin/homepage.php");
+                                while ($row = mysqli_fetch_assoc($response2)) {
+                                    $db_email = $row['email'];
+                                    $db_usertype = $row['usertype'];
+                                    if ($email == $db_email) {
+                                        $name = $row['name'];
+                                        $id = $row['id'];
+                                    }
+                                }
+                                // Fetch the data from database to vaidate login
+                                $response3 = mysqli_fetch_assoc($response);
+                                if ($response3 > 0 && $_POST['usertype'] == "user") {
+                                    $_SESSION['name'] = $name;
+                                    $_SESSION['id'] = $id;
+                                    header('location:../index.php');
+                                }
+                                if ($response3 > 0 && $_POST['usertype'] == "admin") {
+                                    $_SESSION['name'] = $name;
+                                    header("location:../admin/homepage.php");
+                                } else {
+                                    // echo 'Username and password doesnot matched';
+                                    echo "<script> alert('Username Password Doesn matched'); </script>";
+                                }
                             } else {
-                                // echo 'Username and password doesnot matched';
-                                echo "<script> alert('Username Password Doesn matched'); </script>";
+                                echo "<script> alert('Please Enter Username and Password') </script>";
                             }
                         } ?>
                     </div>
                     <div class="btn-login">
                         <input type="submit" value="Login" name="confirm" size="20vh">
-                    </div>
-                    <div class="forgot">
-                        <span><a href="#">Forgot password?</a></span>
                     </div>
 
                 </div>

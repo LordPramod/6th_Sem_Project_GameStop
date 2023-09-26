@@ -3,16 +3,17 @@ include "dashboard.php";
 ?>
 <?php
 include "../../../backend/config/connection.php";
-$stmt = "SELECT * FROM orders";
+$stmt = "SELECT * FROM orders where order_status = 'pending'";
 $response = mysqli_query($connect, $stmt);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <style>
     .main-container {
-        width: auto;
+        width: 100%;
         margin-top: 40px;
         margin-left: 195px;
+
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 10px;
     }
@@ -28,7 +29,7 @@ $response = mysqli_query($connect, $stmt);
     }
 
     table thead th {
-        padding: 5px 10px;
+        padding: 5px 6px;
         text-align: center;
         vertical-align: middle;
         font-family: sans-serif;
@@ -55,15 +56,35 @@ $response = mysqli_query($connect, $stmt);
     }
 
     .order_status {
+        background-color: #f7cb73;
         color: #FFFFFF;
-        border-radius: 5px;
+        font-size: 1rem;
+        border: none;
+        padding: 4px;
+        border-radius: 3px;
 
     }
 
     table .order_id {
         text-align: center;
         vertical-align: middle;
-        padding: 0px 100px;
+
+    }
+
+    table .order_id {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    tbody td a button {
+        background-color: crimson;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 3px;
+    }
+
+    tbody td a .complete {
+        background-color: green;
     }
 </style>
 
@@ -76,16 +97,16 @@ $response = mysqli_query($connect, $stmt);
 
 <body>
     <div class="main-container">
+        <h1 style="text-align: center; color:crimson;">Pending Orders</h1>
         <table>
             <tr>
                 <thead>
                     <th class="order_id">Order No</th>
                     <th>Date</th>
-                    <th>Amount</th>
                     <th>Payment Gateway</th>
                     <th>OrderStatus</th>
-                    <th>Order Date</th>
-                    <th>Action</th>
+                    <th>Purchase Date</th>
+                    <th class="action">Action</th>
 
                 </thead>
             </tr>
@@ -103,19 +124,12 @@ $response = mysqli_query($connect, $stmt);
 
                             <td><?php echo $oderid = '#' . 6000 . $row['order_id']; ?></td>
                             <td><?php echo $row['purchase_date']; ?></td>
-                            <td><?php echo  $row['total']; ?></td>
                             <td><?php echo  $row['payment_method']; ?></td>
+                            <td><span class="order_status"><?php echo $oderid =  $row['order_status']; ?></span></td>
                             <td><?php echo  $row['purchase_date']; ?></td>
-                            <td><span class="order_status"><?php $status = $row['order_status'];
-                                                            if ($status == "pending") {
-                                                                echo '<span style="background-color: #f7cb73;font-size: 1rem; padding: 5px;"> Pending </span>';
-                                                            } elseif ($status == "Completed") {
-                                                                echo '<span style="background-color:green; padding: 5px;"> Completed </span>';
-                                                            } else {
-                                                                echo '<span style="background-color:red; padding: 5px; "> Cancelled </span>';
-                                                            }
-                                                            ?></span></td>
-                            <td><a href="viewSingleProduct.php?id=<?php echo $row['order_id']; ?>">View</a></td>
+                            <td><a href="../../../backend/functions/updateOrderStatus.php?id=<?php echo $row['order_id']; ?>"><button class="complete">Complete</button></a> </td>
+                            <td><a href="../../../backend/functions/cancelOrder.php?id=<?php echo $row['order_id']; ?>"><button>Cancel</button></a>
+                            </td>
                         </tr>
                 <?php }
                 } else {

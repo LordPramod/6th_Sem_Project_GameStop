@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['name'])) {
+    header("location:../authentication/login.php");
+}
+?>
+<?php
 include '../../../backend/config/connection.php';
 include './dashboard.php';
 // session_start();
@@ -15,12 +21,12 @@ $response = mysqli_query($connect, $stmt);
     <title>Document</title>
     <link rel="stylesheet" href="../../assets//css/bootstrap.min.css">
     <style>
-    .table-container table {
-        margin-top: 0px;
-        margin-left: 300px;
-        width: 1218px;
+        .table-container table {
+            margin-top: 0px;
+            margin-left: 300px;
+            width: 1218px;
 
-    }
+        }
     </style>
 </head>
 
@@ -36,13 +42,13 @@ $response = mysqli_query($connect, $stmt);
             <tbody>
                 <?php
                 while ($row = mysqli_fetch_assoc($response)) { ?>
-                <tr>
-                    <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['name']; ?></td>
-                    <td><?php echo $row['email']; ?></td>
-                    <td><a href="#">Update</a></td>
-                    <td><a href="./user-delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
-                </tr>
+                    <tr>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td><a href="#">Update</a></td>
+                        <td><a href="./user-delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
+                    </tr>
                 <?php } ?>
             </tbody>
         </table>

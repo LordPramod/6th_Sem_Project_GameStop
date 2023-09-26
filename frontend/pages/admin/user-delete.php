@@ -6,11 +6,10 @@ include '../../../backend/config/connection.php';
 
 $id = $_GET['id'];
 $stmt = "DELETE  FROM user_info where id = $id ";
-echo $stmt;
 $response  = mysqli_query($connect, $stmt);
 if ($response) {
     echo "Deletion Successful";
-    header('location:./customers.php');
+    header('location:./viewaccounts.php');
 } else {
     echo "Data Deletion Unsuccessful";
 }

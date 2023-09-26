@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: sans-serif;
+    text-decoration: none;
 }
 html{
     scroll-behavior: smooth;
@@ -49,6 +50,10 @@ body{
     
     /* border: 3px solid green; */
 }
+.customer-container a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
 .heading {
     display: flex;
     width: 250px;
@@ -90,7 +95,13 @@ body{
     color: #FFFFFF;
     width: 250px;
     height: 150px;
+    margin-right: 20px;
+    text-decoration: none;
 
+}
+.order-container a {
+    text-decoration: none;
+    color: white;
 }
 .order-container:hover{
     background-color: crimson;
@@ -110,4 +121,31 @@ body{
 .order-container h3{
     margin-top: 30px;
     margin-left: 30px;
+}
+.products-container{
+    border-radius: 10px;
+    background-color: #111111;
+    color: #FFFFFF;
+    width: 250px;
+    height: 150px;
+}
+.products-container a{
+    text-decoration: none;
+    color: white;
+
+}
+.products-container:hover{
+    background-color: crimson;
+}
+.products-container h3{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.product-heading{
+    margin-top: 20px;
+    margin-left: 30px;
+    display: flex;
+}
+.product-heading i {
+    margin-left: 90px;
 }

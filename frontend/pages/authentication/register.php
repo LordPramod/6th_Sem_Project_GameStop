@@ -1,28 +1,30 @@
 <?php
 include '/xampp/htdocs/GameStop/backend/config/connection.php';
+
 if (isset($_POST['confirm'])) {
-  $name = $_POST['name'];
-  $number = $_POST['number'];
-  $email = $_POST['email'];
-  $pass = $_POST['password'];
-  $cpass = $_POST['cpassword'];
+    $name = $_POST['name'];
+    $number = $_POST['number'];
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+    $pass = md5($pass);
+    $cpass = md5($_POST['cpassword']);
 
-  $check = "SELECT * FROM user_info WHERE email = '$email' &&  password ='$pass'";
-  $result = mysqli_query($connect, $check);
-  $check2 = "SELECT * FROM user_info WHERE phone = '$number'";
-  $result2 = mysqli_query($connect, $check2);
-  if (mysqli_num_rows($result) > 0) {
-    echo "<script> alert(Email Already Existed Please Try another one)</script>";
-  } else {
-    if ($pass != $cpass) {
-      echo "Password And confirm Password didn't matched";
+    $check = "SELECT * FROM user_info WHERE email = '$email' &&  password ='$pass'";
+    $result = mysqli_query($connect, $check);
+    $check2 = "SELECT * FROM user_info WHERE phone = '$number'";
+    $result2 = mysqli_query($connect, $check2);
+    if (mysqli_num_rows($result) > 0) {
+        echo "<script> alert(Email Already Existed Please Try another one)</script>";
     } else {
-      $insert = "INSERT INTO user_info(name, email , phone, password , cpassword) VALUES ('$name','$email','$number','$pass','$cpass')";
-      mysqli_query($connect, $insert);
+        if ($pass != $cpass) {
+            echo "Password And confirm Password didn't matched";
+        } else {
+            $insert = "INSERT INTO user_info(name, email , phone, password ) VALUES ('$name','$email','$number','$pass')";
+            mysqli_query($connect, $insert);
 
-      header('location:login.php');
+            header('location:login.php');
+        }
     }
-  }
 }
 ?>
 
@@ -58,37 +60,37 @@ if (isset($_POST['confirm'])) {
                                 <form action="register.php" method="post">
 
                                     <div class="form-outline mb-2">
-                                        <label class="form-label" for="form3Example1cg">Name</label>
+                                        <label class="form-label" for="form3Example1cg">Full Name</label>
                                         <input type="text" id="form3Example1cg" class="form-control form-control-lg"
-                                            name="name" />
+                                            name="name" required />
                                     </div>
 
                                     <div class="form-outline mb-2">
-                                        <label class="form-label" for="form3Example3cg">Mobile Number</label>
-                                        <input type="tel" id="form3Example3cg" class="form-control form-control-lg"
-                                            name="number" />
-                                    </div>
-                                    <div class="form-outline mb-2">
                                         <label class="form-label" for="form3Example3cg">Email</label>
                                         <input type="email" id="form3Example3cg" class="form-control form-control-lg"
-                                            name="email" />
+                                            name="email" required />
+                                    </div>
+                                    <div class="form-outline mb-2">
+                                        <label class="form-label" for="form3Example3cg">Phone Number</label>
+                                        <input type="tel" id="form3Example3cg" class="form-control form-control-lg"
+                                            name="number" required />
                                     </div>
 
                                     <div class="form-outline mb-2">
                                         <label class="form-label" for="form3Example4cg">Password</label>
                                         <input type="password" id="form3Example4cg" class="form-control form-control-lg"
-                                            name="password" />
+                                            name="password" required />
                                     </div>
 
                                     <div class="form-outline mb-2">
                                         <label class="form-label" for="form3Example4cdg">Confirm Password</label>
                                         <input type="password" id="form3Example4cdg"
-                                            class="form-control form-control-lg" name="cpassword" />
+                                            class="form-control form-control-lg" name="cpassword" required />
                                     </div>
 
                                     <div class="form-check d-flex justify-content-center mb-3">
                                         <input class="form-check-input me-2" style="color:crimson;" type="checkbox"
-                                            value="" id="form2Example3cg" />
+                                            value="" id="form2Example3cg" required />
                                         <label class="form-check-label" for="form2Example3g">
                                             I agree all statements in <a href="#!" class="text-body"><u>Terms of
                                                     service</u></a>
@@ -117,4 +119,4 @@ if (isset($_POST['confirm'])) {
 
 </html>
 <!-- <?php include "../../layouts/footer.php";
-      ?> -->
+        ?> -->

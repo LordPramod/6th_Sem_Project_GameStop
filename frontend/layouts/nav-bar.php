@@ -15,8 +15,11 @@ error_reporting(0);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/nav-bar.css">
+    <link rel="stylesheet" href="../assets/css/nav-bar.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="../assets/css/footer.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/card.css"> -->
     <style>
         .icon-cart span {
             margin-top: -40px;
@@ -31,16 +34,20 @@ error_reporting(0);
             <a href="../pages/index.php"><img src="../assets/images/500px-GameStop.svg.png" alt="GameStop logo"></a>
         </div>
         <div class="container-center">
-            <input type="search" name="search" id="" placeholder="Search for products..">
+            <div class="search-form">
+                <form action="../pages/searchbar.php" method="post">
+
+                    <input type="search" name="search" id="" placeholder="Search for products..">
+            </div>
+            <div class="btn-search">
+                <input type="submit" value="Search">
+                </form>
+            </div>
         </div>
 
         <!-- Icons Import from Hero Icons -->
         <div class="conatiner-right">
             <div class="icon-container">
-
-                <div class="search">
-                    <i class="fa fa-thin fa-magnifying-glass fa-lg" style="color: black;"></i>
-                </div>
                 <div class="icon-cart">
                     <a href="../layouts/cart.php"><i class="fa fa fa-light fa-cart-shopping fa-xl" style="color:#ffffff;"></i></a>
                     <span><?php echo $row_count; ?></span>
@@ -52,7 +59,7 @@ error_reporting(0);
                     <a href="../pages/account.php"><i class="fa fa-duotone fa-user fa-xl" style="color: #ffffff;"></i></a>
                 </div>
                 <div class="account-content-container">
-                    <a href="#">
+                    <a href="../pages/account.php">
                         <h5 style="font-size: 0.9rem;">Hello,
                             <?php echo $_SESSION['name'] ?><br>
                             My Account
@@ -79,6 +86,3 @@ error_reporting(0);
         <div class="nav-gif">
         </div>
     </div>
-</body>
-
-</html>

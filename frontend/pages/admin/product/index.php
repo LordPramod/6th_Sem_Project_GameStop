@@ -1,3 +1,6 @@
+<?php
+include "../dashboard.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../../../assets/css/addproduct.css">
 </head>
 
 <body>
@@ -32,7 +35,7 @@
                         <input type="file" id="form3Example3cg" class="form-control form-control-lg" name="Pimage"
                             placeholder="Add Product Image" enctype="multipart/form-data" />
                     </div>
-                    <div class="form-outline mb-2">
+                    <div class="form-outline mb-2" id="form-outline">
                         <label class="form-label" for="form3Example4cg">Product Category</label>
                         <select name="Pages" id="" class="form-select ">
                             <option value="1">Gift Cards</option>
@@ -44,7 +47,7 @@
                             <option value="7">Xbox Live Gift Card</option>
                             <option value="8">Steam Gift Card</option>
                         </select>
-                        <input type="submit" value="Upload" name="upload" class=" form-control fs-4 my-3">
+                        <input type="submit" value="Upload" name="upload" class=" form-control fs-4 my-3" id="upload">
                     </div>
                 </form>
 

@@ -39,10 +39,13 @@ $row = mysqli_fetch_assoc($response);
                 <div class="content-container">
                     <form action="../../backend/functions/insertCart.php" method="post">
                         <h2><?php echo $row['pdt_name']; ?></h2>
+                        <h4>Price <?php echo $row['pdt_price']; ?></h4>
                         <input type="hidden" name="Pproduct" value="<?php echo $row['pdt_id']; ?>">
+                        <input type="hidden" name="Pid" value="<?php echo $row['id']; ?>">
                         <input type="hidden" name="Pproduct" value="<?php echo $row['pdt_name']; ?>">
                         <input type="hidden" name="Pprice" value="<?php echo $row['pdt_price']; ?>">
-                        <input type="number" name="Pamount" id="" value="1" max="5" min="1" class=" form-control ">
+                        <input type="hidden" name="Pimage" value="<?php echo $row['product_image']; ?>">
+                        <span>Quantity:</span><input type="number" name="Pamount" id="" value="1" max="5" min="1" class=" form-control "><br><br>
 
 
                         <input type="submit" class="btn btn-dark" value="Add to Cart" id="btn_buynow" name="addCart">

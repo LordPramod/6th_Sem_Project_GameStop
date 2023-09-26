@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -127,6 +127,4 @@ span{
 .product-title-container a:hover{
     color: #FC671A;
 }
-/* Test */
 
-  /* Test ends here  */
