@@ -11,6 +11,7 @@ html{
 }
 /* Login Page styling Codes */
 body{
+<<<<<<< HEAD
     background-color: #FFFFFF;
     margin: 10px 0px  10px 10px;
       padding: 0;
@@ -66,12 +67,95 @@ body{
         left: 10px;
         color: #000000;
         font-size: 1.3rem;
+=======
+      height: 100vh;
+      /* display: flex; */
+      overflow: hidden;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    /* style.css */
+    .carousel {
+    width: auto;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #ccc;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 300%; /* Adjust according to the number of images */
+    transition: transform 0.5s ease-in-out;
+}
+
+.img-item {
+    min-width: 33.33%; /* Each image takes up one-third of the space */
+}
+
+.img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    align-items: center;
+}
+
+   /* Change */ 
+    .right {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.112); 
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    
+    .form-body {
+        width: 100%;
+        /* text-align: center;  */
+    }
+    
+    .heading{
+    font-family: 'Arial Black', sans-serif; /* Choose a bold font */
+    font-weight: bold; /* Ensure the font is bold */
+    letter-spacing: 0.1em; /* Adjust letter spacing */
+    font-size: 56px; /* Adjust font size as needed */
+    color: #FBFAF3; /* Set text color */
+    padding: 10px;
+    }
+    .login-page{
+        color: #FBFAF3;
+        font-size: 2.6rem;
+        
+    }
+    .form-div .input-box{
+        width: 85%;
+        margin-top: 2px;
+        padding: 8px;
+        border-radius: 8px;
+        border-color: #000000;
+        color: #00E701;
+        font-size: 1.2rem;
+        
+    }
+    .form-div label {
+        color: #FBFAF3;
+        font-size: 1.5rem;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     }
     .loggedin{
         color: #000000;
         margin-top: 10px
     }
     .btn-login input{
+<<<<<<< HEAD
         position: relative;
         top: 4vh;
         left: 10vh;
@@ -80,6 +164,13 @@ body{
         padding: 10px  90px;
         border: none;
         font-size: 1.5rem;
+=======
+        background-color: #000000;
+        color: #FFFFFF;
+        padding: 10px  90px;
+        font-size: 1.5rem;
+        border-radius: 8px ;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     }
     .forgot span a{
         text-decoration: none;
@@ -90,8 +181,12 @@ body{
         color: #000000;
     }
     .btn-login input:hover{
+<<<<<<< HEAD
         background-color: crimson;
         color: #000000;
+=======
+        background-color :#00E701;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
         border-color: transparent;
         cursor: pointer;
     }
@@ -103,8 +198,28 @@ body{
     }
     .signup  {
         margin-left: 20px;
+<<<<<<< HEAD
         text-decoration: none;
     }
     .signup p a {
         text-decoration: none;
+=======
+        margin-top: 16px;
+        text-decoration: none;
+        color: #FBFAF3;
+    }
+    .signup p a {
+        text-decoration: none;
+        color: #00E701;
+        font-size: 1.1rem;
+    }
+    .signup a {
+        text-decoration: none;
+        color: #FBFAF3;
+        font-size: 1.1rem;
+    }
+    
+    .signup a:hover{
+        color: #00E701;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     }

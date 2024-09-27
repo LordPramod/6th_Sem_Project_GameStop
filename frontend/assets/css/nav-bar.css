@@ -8,12 +8,20 @@ html{
     scroll-behavior: smooth;
 }
 body{
+<<<<<<< HEAD
     background-color: #F6F7F9;
+=======
+    background-color: #1A2C38;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     
 }
 /* Nav Bar Styling */
 .container-header{
+<<<<<<< HEAD
     background: crimson;
+=======
+    background: #1A2C38;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     border: none;
     position: sticky;
     top:0;
@@ -54,9 +62,15 @@ body{
     border: none;
 }
 .btn-search input:hover{
+<<<<<<< HEAD
     background-color: crimson;
     color: #F6F7F9;
     border: 1px solid crimson;
+=======
+    background-color: #00E701;
+    color: #F6F7F9;
+    border: 1px solid #00E701;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     border-radius: 10px;
 }
 .container-right {
@@ -84,6 +98,10 @@ body{
     display: flex;
     position: absolute;
     left: 225px;
+<<<<<<< HEAD
+=======
+    color: #1A2C38;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 }
 .container-nav ul{
     display: flex;
@@ -105,7 +123,11 @@ body{
     
 }
 .container-nav ul li a:hover{
+<<<<<<< HEAD
     color: crimson;
+=======
+    color: #00E701;
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 }
 .account-content-container {
     margin-top: -10px;

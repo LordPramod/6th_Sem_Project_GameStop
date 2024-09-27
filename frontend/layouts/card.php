@@ -29,7 +29,11 @@ $result = mysqli_query($connect, $stmt);
                 <!-- image Container -->
                 <div class="image-container">
                     <a href="../pages/view-category-products.php?id=<?php echo $row['C_id']; ?>">
+<<<<<<< HEAD
                         <img src="../assets/images/<?php echo $row['products_category_image']; ?>" alt="Google-Gift-Card" srcset="">
+=======
+                        <img src="../assets/images/<?php echo $row['product_category_image'];?>" alt="category_image" srcset="">
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                     </a>
                     <div class="product-title-container">
                         <a href="../pages/view-category-products.php?id=<?php echo $row['C_id']; ?>"><?php echo $row['pdt_category_name']; ?></a>

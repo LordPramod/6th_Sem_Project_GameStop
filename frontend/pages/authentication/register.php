@@ -1,5 +1,9 @@
 <?php
 include '/xampp/htdocs/GameStop/backend/config/connection.php';
+<<<<<<< HEAD
+=======
+include '../../../backend/config/mailer.php';
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 
 if (isset($_POST['confirm'])) {
     $name = $_POST['name'];
@@ -21,11 +25,40 @@ if (isset($_POST['confirm'])) {
         } else {
             $insert = "INSERT INTO user_info(name, email , phone, password ) VALUES ('$name','$email','$number','$pass')";
             mysqli_query($connect, $insert);
+<<<<<<< HEAD
 
             header('location:login.php');
         }
     }
 }
+=======
+            $mail->setFrom("thapapramod821@gmai.com", "GameStop");
+            $mail->addAddress($email);
+            $mail->Subject = "Welcome to GameStop! Confirm Your Account";
+            $mail->Body = "
+    
+            Dear ,<?php echo $name ?> <br> <br>
+            Thank you for registering with GameStop! We're excited to have you on board.<br>
+
+            If you did not register for a GamesStop account, please ignore this email.
+
+            For any questions or assistance, feel free to reach out to our support team at thapapramod821@gmail.com. ";
+            try {
+                $mail->send();
+
+            } catch (Exception $e) {
+                echo "Message Couldnt nott be sent . Mailer error:{$mail->ErrorInfo}";
+            }
+
+
+        }
+        echo "Message Sent, please check your inbox";
+
+        header('location:login.php');
+    }
+}
+
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 ?>
 
 
@@ -119,4 +152,8 @@ if (isset($_POST['confirm'])) {
 
 </html>
 <!-- <?php include "../../layouts/footer.php";
+<<<<<<< HEAD
         ?> -->
+=======
+?> -->
+>>>>>>> b268b30 (Added Php Mailer Changed Login Page)
