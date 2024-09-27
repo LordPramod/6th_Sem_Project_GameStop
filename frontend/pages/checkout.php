@@ -1,23 +1,14 @@
 <?php
 include "../../backend/config/connection.php";
-<<<<<<< HEAD
 if (isset($_POST['checkout'])) {
     session_start();
-=======
-session_start();
-if (isset($_POST['checkout'])) {
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     $userid = $_SESSION['id'];
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $city = $_POST['city'];
     $address = $_POST['address'];
-<<<<<<< HEAD
-    $check_stmt =  mysqli_query($connect, "SELECT * FROM checkout_detail where Uid = {$_SESSION['id']}");
-=======
     $check_stmt = mysqli_query($connect, "SELECT * FROM checkout_detail where Uid = {$_SESSION['id']}");
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     if (mysqli_num_rows($check_stmt) > 0) {
         header("location:../layouts/payment.php");
         echo "<script> alert('Billing Address Already Existed') </script>";
@@ -54,13 +45,14 @@ if (isset($_POST['checkout'])) {
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">Email</label>
-<<<<<<< HEAD
-                    <input type="email" class="form-control" name="email" id="checkout-email" placeholder="Email" required>
+                    <<<<<<< HEAD <input type="email" class="form-control" name="email" id="checkout-email"
+                        placeholder="Email" required>
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">Phone</label>
-                    <input type="tel" class="form-control" name="phone" id="checkout-phone" placeholder="Phone" required>
-=======
+                    <input type="tel" class="form-control" name="phone" id="checkout-phone" placeholder="Phone"
+                        required>
+                    =======
                     <input type="email" class="form-control" name="email" id="checkout-email" placeholder="Email"
                         required>
                 </div>
@@ -68,7 +60,7 @@ if (isset($_POST['checkout'])) {
                     <label for="">Phone</label>
                     <input type="tel" class="form-control" name="phone" id="checkout-phone" placeholder="Phone"
                         required>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
+                    >>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">City</label>
@@ -76,12 +68,12 @@ if (isset($_POST['checkout'])) {
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">Address</label>
-<<<<<<< HEAD
-                    <input type="text" class="form-control" name="address" id="checkout-address" placeholder="Address" required>
-=======
-                    <input type="text" class="form-control" name="address" id="checkout-address" placeholder="Address"
-                        required>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
+                    <<<<<<< HEAD <input type="text" class="form-control" name="address" id="checkout-address"
+                        placeholder="Address" required>
+                        =======
+                        <input type="text" class="form-control" name="address" id="checkout-address"
+                            placeholder="Address" required>
+                        >>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                 </div>
                 <div class="form-group checkout-btn-container">
                     <input type="submit" class="btn" id="checkout-btn" value="Check out" name="checkout">

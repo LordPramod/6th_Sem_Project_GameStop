@@ -17,27 +17,7 @@ session_start();
 <body>
     <div class="left">
 
-<<<<<<< HEAD
     </div>
-=======
-        <div class="carousel">
-
-            <div class="carousel-inner">
-
-                <img class="img-item" src="../../assets/images/black-myth-wukong.jpg" alt="Image 1">
-
-                <img class="img-item" src="../../assets/images/modernwarefareII.jpg" alt="Image 2">
-
-                <img class="img-item" src="../../assets/images/login_page_background.jpg" alt="Image 3">
-
-            </div>
-
-        </div>
-
-
-    </div>
-
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     <div class="right">
 
         <div class="form-body">
@@ -47,7 +27,6 @@ session_start();
             <form action="login.php" method="post">
                 <div class="form-div">
                     <label for="email">Email </label><br>
-<<<<<<< HEAD
                     <input type="email" name="email" placeholder="Email address" size="50vh" autocomplete="new-password"
                         class="form-contol" required><br>
 
@@ -61,31 +40,15 @@ session_start();
                             <option value="user" class="bg-primary">User</option>
                             <option value="admin" class="bg-primary">Admin</option>
                         </select>
-=======
-                    <input type="email" name="email" placeholder="Enter Your Email" size="50vh"
-                        autocomplete="new-password" class="input-box" required autocomplete="off"><br>
-
-                    <div class="form-div">
-                        <label for="password">Password </label><br>
-                        <input type="password" name="password" size="50vh" placeholder="Enter Your Password"
-                            class="input-box" required autocomplete="off"><br>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                     </div>
 
                     <div class="signup">
                         <p>Dont Have Account Yet ? <a href="./register.php">Click Here</a></p>
-<<<<<<< HEAD
-=======
-
-                        <a href="./forgot-password.php">Forgot your Password ?</a>
-
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                     </div>
                     <div class="validate">
                         <?php
                         include '/xampp/htdocs/GameStop/backend/config/connection.php';
                         if (isset($_POST['confirm'])) {
-<<<<<<< HEAD
                             $email = $_POST['email'];
                             $pass = $_POST['password'];
                             // Change 
@@ -125,46 +88,6 @@ session_start();
                                 echo "<script> alert('Please Enter Username and Password') </script>";
                             }
                         } ?>
-=======
-
-                            $email = $_POST['email'];
-
-                            $pass = $_POST['password'];
-
-                            // Change 
-                        
-                            $pass = md5($pass);
-
-                            $sql = "SELECT * FROM user_info where email = '$email' and password = '$pass'";
-
-                            $response = mysqli_query($connect, $sql);
-
-                            // getting Name From Database to use in Session
-                            if (mysqli_num_rows($response) > 0) {
-
-                                while ($row = mysqli_fetch_assoc($response)) {
-                                    // $db_email = $row['email'];
-                                    $db_usertype = $row['usertype'];
-                                    $name = $row['name'];
-                                    $id = $row['id'];
-                                    // exit();
-                                    if ($db_usertype == 'user') {
-                                        $_SESSION['name'] = $name;
-                                        $_SESSION['id'] = $id;
-                                        header('location:../index.php');
-                                    } elseif ($db_usertype == 'admin') {
-                                        $_SESSION['name'] = $name;
-                                        header("location:../admin/homepage.php");
-                                    }
-                                    exit();
-
-                                }
-                            } else {
-                                echo "<script> alert('Username Password Doesn matched'); </script>";
-                            }
-                        }
-                        ?>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                     </div>
                     <div class="btn-login">
                         <input type="submit" value="Login" name="confirm" size="20vh">
@@ -175,12 +98,10 @@ session_start();
         </div>
     </div>
 
-<<<<<<< HEAD
-=======
-    <!-- javascript -->
-    <?php echo " <script src='../../assets/js/carsoule.js'></script> "; ?>
+    <<<<<<< HEAD=======<!-- javascript -->
+        <?php echo " <script src='../../assets/js/carsoule.js'></script> "; ?>
 
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
+        >>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 
 
 </body>
