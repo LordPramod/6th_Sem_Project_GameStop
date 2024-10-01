@@ -11,63 +11,6 @@ html{
 }
 /* Login Page styling Codes */
 body{
-<<<<<<< HEAD
-    background-color: #FFFFFF;
-    margin: 10px 0px  10px 10px;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-    }
-
-    .left {
-      flex: 1;
-      background-color: crimson;
-      border-top-left-radius: 16px;
-      border-bottom-left-radius: 16px;
-      background-image: url(../images/login_page_background.jpg);
-      background-size: contain;
-    }
-
-    .right {
-        flex: 1;
-        background-color: #FFFFFF;
-    }
-    .right .form-body{
-        position: absolute;
-        top: 35%;
-        left: 60%;
-        /* transform: translate(-50%, -50%); */
-
-    }
-    .heading{
-        font-size: 3rem;
-        position: relative;
-        top: -30px;
-        color: crimson;
-    }
-    .login-page{
-        position: relative;
-        top: -20px;
-        color: #000000;
-        font-size: 1.5rem;
-        
-    }
-    .form-div input{
-        margin-top: 2px;
-        padding: 8px;
-        border-radius: 8px;
-        background-color: transparent;
-        border-color: #000000;
-        color: crimson;
-        font-size: 1rem;
-        
-    }
-    .form-div label {
-        position:relative;
-        left: 10px;
-        color: #000000;
-        font-size: 1.3rem;
-=======
       height: 100vh;
       /* display: flex; */
       overflow: hidden;
@@ -148,29 +91,17 @@ body{
     .form-div label {
         color: #FBFAF3;
         font-size: 1.5rem;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     }
     .loggedin{
         color: #000000;
         margin-top: 10px
     }
     .btn-login input{
-<<<<<<< HEAD
-        position: relative;
-        top: 4vh;
-        left: 10vh;
-        background-color: #000000;
-        color: #FFFFFF;
-        padding: 10px  90px;
-        border: none;
-        font-size: 1.5rem;
-=======
         background-color: #000000;
         color: #FFFFFF;
         padding: 10px  90px;
         font-size: 1.5rem;
         border-radius: 8px ;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     }
     .forgot span a{
         text-decoration: none;
@@ -181,12 +112,7 @@ body{
         color: #000000;
     }
     .btn-login input:hover{
-<<<<<<< HEAD
-        background-color: crimson;
-        color: #000000;
-=======
         background-color :#00E701;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
         border-color: transparent;
         cursor: pointer;
     }
@@ -198,12 +124,6 @@ body{
     }
     .signup  {
         margin-left: 20px;
-<<<<<<< HEAD
-        text-decoration: none;
-    }
-    .signup p a {
-        text-decoration: none;
-=======
         margin-top: 16px;
         text-decoration: none;
         color: #FBFAF3;
@@ -221,5 +141,4 @@ body{
     
     .signup a:hover{
         color: #00E701;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     }

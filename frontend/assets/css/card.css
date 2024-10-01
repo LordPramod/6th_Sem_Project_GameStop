@@ -30,11 +30,7 @@ body{
     width: 270px;
     margin-top: 20px;
     /* border: 3px solid red; */
-<<<<<<< HEAD
-    box-shadow: 5px 5px 15px 5px #FFFFFF;
-=======
     box-shadow: 5px 5px 15px 5px #1A2C38;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
     margin-bottom: 20px;
     
 }
@@ -61,11 +57,7 @@ body{
     color: #7F7F7F;;
 }
 .image-container .product-title-container a:hover{
-<<<<<<< HEAD
-     color: #FC671A;
-=======
      color: #00A54A;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
      transition: .5s ease-in;
 }
 .product-heading {

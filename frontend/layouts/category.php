@@ -31,36 +31,28 @@ $response = mysqli_query($connect, $stmt);
             height: 300px;
             margin: 0 auto;
             padding: 20px;
-<<<<<<< HEAD
-=======
-            display: flex;
+            <<<<<<< HEAD=======display: flex;
 
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
+            >>>>>>>b268b30 (Added Php Mailer Changed Login Page)
         }
 
 
         .contain-container {
             border: 2px solid green;
 
-<<<<<<< HEAD
-=======
             margin: 0 0 30px 30px;
 
 
 
 
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 
         }
 
         .contain-container h5 {
             text-align: center;
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
         }
     </style>
 </head>
@@ -75,11 +67,7 @@ $response = mysqli_query($connect, $stmt);
 
 
                 <!-- <td><?php echo $row['C_id']; ?></td> -->
-<<<<<<< HEAD
-                <img src="../assets//images/<?php echo $row['products_category_image']; ?>" alt="" srcset="">
-=======
                 <img src="../assets//images/<?php echo $row['product_category_image']; ?>" alt="" srcset="">
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                 <h5><?php echo $row['pdt_category_name']; ?> </h5>
             </div>
         <?php } ?>

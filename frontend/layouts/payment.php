@@ -41,18 +41,18 @@ if (isset($_SESSION['name'])) {
                         if (mysqli_num_rows($cart_stmt) > 0) {
 
                             while ($row = mysqli_fetch_assoc($cart_stmt)) { ?>
-                        <tr>
-                            <td class="pdt-image"><img src="../assets/images/<?php echo $row['image']; ?>"
-                                    alt="product_image"></td>
-                            <td><?php echo $row['product_name']; ?></td>
-                            <td><?php echo $row['product_price']; ?></td>
-                            <td><?php echo $row['product_quantity']; ?></td>
-                            <td><?php echo $row['total_amount']; ?></td>
-                            <?php  } ?>
+                                <tr>
+                                    <td class="pdt-image"><img src="../assets/images/<?php echo $row['image']; ?>"
+                                            alt="product_image"></td>
+                                    <td><?php echo $row['product_name']; ?></td>
+                                    <td><?php echo $row['product_price']; ?></td>
+                                    <td><?php echo $row['product_quantity']; ?></td>
+                                    <td><?php echo $row['total_amount']; ?></td>
+                                <?php } ?>
                             <?php } else { ?>
-                            <td class="not-found"><?php echo "Product not Found"; ?></td>
+                                <td class="not-found"><?php echo "Product not Found"; ?></td>
                             <?php }
-                            ?>
+                        ?>
                         </tr>
                     </tbody>
                 </table>

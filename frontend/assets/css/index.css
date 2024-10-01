@@ -7,19 +7,11 @@
 html{
     scroll-behavior: smooth;
 }
-<<<<<<< HEAD
-body{
-    background-color: #F6F7F9;
-    
-}
-/* nav bar styling  */
-=======
 /* nav bar styling  */
 body{
     background-color: #1A2C38;
     
 }
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 .container-header{
     background-color: #1C4F49;
     border: 1px solid black;

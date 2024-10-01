@@ -67,17 +67,10 @@
                     <a href="../assets/images/500px-GameStop.svg.png"><img src="../pages/index.php" alt=""></a><br>
                     <div class="icon-location">
 
-<<<<<<< HEAD
-                        <i class="fa fa-sharp fa-light fa-location-dot fa-lg" style="color: crimson;"></i><br>
-                        <i class="fa fa-thin fa-phone fa-lg" style="color: crimson;"></i><br>
-                        <i class="fa fa-light fa-id-card fa-lg" style="color:crimson"></i><br>
-                        <i class="fa fa-light fa-envelope fa-lg" style="color: crimson;"></i>
-=======
                         <i class="fa fa-sharp fa-light fa-location-dot fa-lg" style="color: #01E203;"></i><br>
                         <i class="fa fa-thin fa-phone fa-lg" style="color: #01E203;"></i><br>
                         <i class="fa fa-light fa-id-card fa-lg" style="color:#01E203"></i><br>
                         <i class="fa fa-light fa-envelope fa-lg" style="color: #01E203;"></i>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                     </div>
                     <div class="detail">
                         <p>Kathmandu, Nepal</p>

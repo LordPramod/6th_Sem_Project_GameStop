@@ -49,24 +49,16 @@ error_reporting(0);
         <div class="conatiner-right">
             <div class="icon-container">
                 <div class="icon-cart">
-<<<<<<< HEAD
-                    <a href="../layouts/cart.php"><i class="fa fa fa-light fa-cart-shopping fa-xl" style="color:#ffffff;"></i></a>
-=======
                     <a href="../layouts/cart.php"><i class="fa fa fa-light fa-cart-shopping fa-xl"
                             style="color:#ffffff;"></i></a>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                     <span><?php echo $row_count; ?></span>
                 </div>
                 <div class="icon-wallet">
                     <a href="#"><i class="fa fa-duotone fa-wallet fa-xl" style="color: #ffffff;"></i></a>
                 </div>
                 <div class="icon-account">
-<<<<<<< HEAD
-                    <a href="../pages/account.php"><i class="fa fa-duotone fa-user fa-xl" style="color: #ffffff;"></i></a>
-=======
                     <a href="../pages/account.php"><i class="fa fa-duotone fa-user fa-xl"
                             style="color: #ffffff;"></i></a>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                 </div>
                 <div class="account-content-container">
                     <a href="../pages/account.php">
@@ -85,18 +77,11 @@ error_reporting(0);
     <div class="container-nav">
         <ul>
             <li><a href="../pages/gift-card-nav.php">GIFT CARD</a></li>
-<<<<<<< HEAD
-=======
             <li> <a href="../pages/games.php">GAMES</a> </li>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
             <li> <a href="../pages/subscriptions.php">SUBSCRIPTION</a></li>
             <li> <a href="#">MOBILE GAMES TOPUP</a></li>
             <li> <a href="#">TIKTOK COINS</a></li>
             <li> <a href="#">GAMING GEARS</a> </li>
-<<<<<<< HEAD
-            <li> <a href="#">FREE FIRE TOPUP</a> </li>
-=======
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
             <img src="../assets/images/topup-gif.gif" alt="" srcset="">
 
         </ul>

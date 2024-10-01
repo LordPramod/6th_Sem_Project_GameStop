@@ -17,7 +17,23 @@ session_start();
 <body>
     <div class="left">
 
+        <div class="carousel">
+
+            <div class="carousel-inner">
+
+                <img class="img-item" src="../../assets/images/black-myth-wukong.jpg" alt="Image 1">
+
+                <img class="img-item" src="../../assets/images/modernwarefareII.jpg" alt="Image 2">
+
+                <img class="img-item" src="../../assets/images/login_page_background.jpg" alt="Image 3">
+
+            </div>
+
+        </div>
+
+
     </div>
+
     <div class="right">
 
         <div class="form-body">
@@ -27,19 +43,13 @@ session_start();
             <form action="login.php" method="post">
                 <div class="form-div">
                     <label for="email">Email </label><br>
-                    <input type="email" name="email" placeholder="Email address" size="50vh" autocomplete="new-password"
-                        class="form-contol" required><br>
+                    <input type="email" name="email" placeholder="Enter Your Email" size="50vh"
+                        autocomplete="new-password" class="form-contol" required autocomplete="off"><br>
 
                     <div class="form-div">
                         <label for="password">Password </label><br>
-                        <input type="password" name="password" size="50vh" placeholder="Password" class="form-contol"
-                            required><br>
-                    </div>
-                    <div class="form-group mt-1">
-                        <select name="usertype" class="form-select" id="usertype">
-                            <option value="user" class="bg-primary">User</option>
-                            <option value="admin" class="bg-primary">Admin</option>
-                        </select>
+                        <input type="password" name="password" size="50vh" placeholder="Enter Your Password"
+                            class="form-contol" required autocomplete="off"><br>
                     </div>
 
                     <div class="signup">
@@ -47,47 +57,40 @@ session_start();
                     </div>
                     <div class="validate">
                         <?php
+
                         include '/xampp/htdocs/GameStop/backend/config/connection.php';
+
                         if (isset($_POST['confirm'])) {
                             $email = $_POST['email'];
-                            $pass = $_POST['password'];
-                            // Change 
-                            $pass = md5($pass);
-                            // 
-                            $usertype = $_POST['usertype'];
-                            $sql = "SELECT * FROM user_info where email = '$email' and password = '$pass' and usertype = '$usertype'";
-                            $query = "SELECT * FROM user_info";
-                            $response2 = mysqli_query($connect, $query);
-                            $response = mysqli_query($connect, $sql);
-                            // getting Name From Database to use in Session
-                            if (mysqli_num_rows($response) > 0) {
+                            $pass = md5($_POST['password']); // Consider using a more secure hashing algorithm
+                        
+                            $stmt = $connect->prepare("SELECT * FROM user_info WHERE email = ? AND password = ?");
+                            $stmt->bind_param("ss", $email, $pass);
+                            $stmt->execute();
+                            $response = $stmt->get_result();
 
-                                while ($row = mysqli_fetch_assoc($response2)) {
-                                    $db_email = $row['email'];
-                                    $db_usertype = $row['usertype'];
-                                    if ($email == $db_email) {
-                                        $name = $row['name'];
-                                        $id = $row['id'];
-                                    }
+                            if ($response->num_rows > 0) {
+                                $row = $response->fetch_assoc();
+                                $db_usertype = $row['usertype'];
+                                $name = $row['name'];
+                                $id = $row['id'];
+
+                                $_SESSION['name'] = $name;
+                                $_SESSION['id'] = $id;
+
+                                if ($db_usertype == 'user') {
+                                    header('Location: ../index.php');
+                                } elseif ($db_usertype == 'admin') {
+                                    header('Location: ../admin/homepage.php');
                                 }
-                                // Fetch the data from database to vaidate login
-                                $response3 = mysqli_fetch_assoc($response);
-                                if ($response3 > 0 && $_POST['usertype'] == "user") {
-                                    $_SESSION['name'] = $name;
-                                    $_SESSION['id'] = $id;
-                                    header('location:../index.php');
-                                }
-                                if ($response3 > 0 && $_POST['usertype'] == "admin") {
-                                    $_SESSION['name'] = $name;
-                                    header("location:../admin/homepage.php");
-                                } else {
-                                    // echo 'Username and password doesnot matched';
-                                    echo "<script> alert('Username Password Doesn matched'); </script>";
-                                }
+                                exit(); // Ensure the script stops executing after the redirect
                             } else {
-                                echo "<script> alert('Please Enter Username and Password') </script>";
+                                echo "<script>alert('Username or Password does not match');</script>";
                             }
-                        } ?>
+                        }
+                        ?>
+
+
                     </div>
                     <div class="btn-login">
                         <input type="submit" value="Login" name="confirm" size="20vh">
@@ -98,10 +101,9 @@ session_start();
         </div>
     </div>
 
-    <<<<<<< HEAD=======<!-- javascript -->
-        <?php echo " <script src='../../assets/js/carsoule.js'></script> "; ?>
+    <!-- javascript -->
+    <?php echo " <script src='../../assets/js/carsoule.js'></script> "; ?>
 
-        >>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 
 
 </body>

@@ -51,11 +51,7 @@ body{
     color: #7F7F7F;;
 }
 .image-container .product-title-container a:hover{
-<<<<<<< HEAD
-     color: #FC671A;
-=======
      color: #00A54A;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
      transition: .5s ease-in;
 }
 .product-heading h2{
