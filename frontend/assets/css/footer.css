@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 html{
     scroll-behavior: smooth;
@@ -9,6 +10,7 @@ html{
 
 .footer-content-container{
     display: flex;
+    background-color: #1A2C38;
 }
 .logo {
     display: flex;
