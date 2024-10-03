@@ -46,10 +46,7 @@ include "../dashboard.php";
                             <option value="6">Mobile Legends Diamonds</option>
                             <option value="7">Xbox Live Gift Card</option>
                             <option value="8">Steam Gift Card</option>
-<<<<<<< HEAD
-=======
                             <option value="9">Games</option>
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
                         </select>
                         <input type="submit" value="Upload" name="upload" class=" form-control fs-4 my-3" id="upload">
                     </div>

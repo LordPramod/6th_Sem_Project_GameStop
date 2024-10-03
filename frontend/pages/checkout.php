@@ -45,14 +45,6 @@ if (isset($_POST['checkout'])) {
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">Email</label>
-                    <<<<<<< HEAD <input type="email" class="form-control" name="email" id="checkout-email"
-                        placeholder="Email" required>
-                </div>
-                <div class="form-group checkout-small-element">
-                    <label for="">Phone</label>
-                    <input type="tel" class="form-control" name="phone" id="checkout-phone" placeholder="Phone"
-                        required>
-                    =======
                     <input type="email" class="form-control" name="email" id="checkout-email" placeholder="Email"
                         required>
                 </div>
@@ -60,7 +52,11 @@ if (isset($_POST['checkout'])) {
                     <label for="">Phone</label>
                     <input type="tel" class="form-control" name="phone" id="checkout-phone" placeholder="Phone"
                         required>
-                    >>>>>>> b268b30 (Added Php Mailer Changed Login Page)
+                </div>
+                <div class="form-group checkout-small-element">
+                    <label for="">Phone</label>
+                    <input type="tel" class="form-control" name="phone" id="checkout-phone" placeholder="Phone"
+                        required>
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">City</label>
@@ -68,12 +64,8 @@ if (isset($_POST['checkout'])) {
                 </div>
                 <div class="form-group checkout-small-element">
                     <label for="">Address</label>
-                    <<<<<<< HEAD <input type="text" class="form-control" name="address" id="checkout-address"
-                        placeholder="Address" required>
-                        =======
-                        <input type="text" class="form-control" name="address" id="checkout-address"
-                            placeholder="Address" required>
-                        >>>>>>> b268b30 (Added Php Mailer Changed Login Page)
+                    <input type="text" class="form-control" name="address" id="checkout-address" placeholder="Address"
+                        required>
                 </div>
                 <div class="form-group checkout-btn-container">
                     <input type="submit" class="btn" id="checkout-btn" value="Check out" name="checkout">

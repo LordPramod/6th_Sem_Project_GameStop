@@ -84,10 +84,7 @@ body{
     display: flex;
     position: absolute;
     left: 225px;
-<<<<<<< HEAD
-=======
     color: #1A2C38;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 }
 .container-nav ul{
     display: flex;
@@ -109,11 +106,7 @@ body{
     
 }
 .container-nav ul li a:hover{
-<<<<<<< HEAD
-    color: crimson;
-=======
     color: #00E701;
->>>>>>> b268b30 (Added Php Mailer Changed Login Page)
 }
 .account-content-container {
     margin-top: -10px;

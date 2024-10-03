@@ -31,9 +31,6 @@ $response = mysqli_query($connect, $stmt);
             height: 300px;
             margin: 0 auto;
             padding: 20px;
-            <<<<<<< HEAD=======display: flex;
-
-            >>>>>>>b268b30 (Added Php Mailer Changed Login Page)
         }
 
 
