@@ -48,6 +48,8 @@ include "../dashboard.php";
                             <option value="8">Steam Gift Card</option>
                             <option value="9">Games</option>
                         </select>
+                        <label for="textarea">Description</label><br>
+                        <textarea name="description" style="width:100% ; height:200px"></textarea>
                         <input type="submit" value="Upload" name="upload" class=" form-control fs-4 my-3" id="upload">
                     </div>
                 </form>

@@ -53,7 +53,12 @@ $row = mysqli_fetch_assoc($response);
 
                     </form>
                 </div>
+                
+                
             </div>
+            <div class="description">
+            <span style="font-size: 1.1rem;"><?php echo $row['description'] ?></span>
+        </div>
         </div>
     </div>
 
