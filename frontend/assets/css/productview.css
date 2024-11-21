@@ -15,6 +15,7 @@ html{
     margin-top: 100px;
     height: 190px;
     background-color:#343A40 ;
+    padding: 20px;
 }
 .border-container h3{
     margin-top: 40px;
@@ -25,7 +26,7 @@ html{
 .product-content-container{
     /* border: 1px solid red; */
     display: flex;
-    margin: -80px;
+    margin: 20px 200px;
     height: 920px;
     width: 1115px;
     margin-left: 200px;
@@ -39,13 +40,21 @@ html{
 }
 .image-container img{
     margin-left: 65px;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 20px;
 }
 /* Content Container Styling */
 .content-container {
     margin-left: 265px;
     margin-top: 40px;
     /* background-color: red; */
-    
+    padding: 20px;
 }
 input[type='number']{
     width: 60px;
@@ -60,4 +69,11 @@ input[type='number']{
     margin-left: 20px;
     background-color: #000000;
     border: none;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btn_buynow:hover {
+    background-color: #343A40;
+    transform: scale(1.05);
 }

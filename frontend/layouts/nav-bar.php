@@ -15,11 +15,10 @@ error_reporting(0);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/nav-bar.css?v=1">
+    <link rel="stylesheet" href="../assets/css/nav-bar.css?">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- <link rel="stylesheet" href="../assets/css/footer.css"> -->
-    <!-- <link rel="stylesheet" href="../assets/css/card.css"> -->
+  
     <style>
         .icon-cart span {
             margin-top: -40px;

@@ -11,10 +11,12 @@ if (isset($_POST["upload"]) && isset($_FILES['Pimage'])) {
     $description = $_POST['description'];
     
     move_uploaded_file($tmp_name, $file);
-    $stmt = "INSERT INTO products_details (pdt_name ,pdt_price,product_image,products_category,description) VALUES ('$product_name','$product_price','$filename','$product_category','$description')";
-    $response = mysqli_query($connect, $stmt);
+    $stmt = $connect->prepare("INSERT INTO products_details (pdt_name, pdt_price, product_image, products_category, description) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $product_name, $product_price, $filename, $product_category, $description);
+    $response = $stmt->execute();
+    
     if ($response) {
-        echo "<script>alert('Product Insertion Succesfully');</script>";
+        echo "<script>alert('Product Insertion Successfully');</script>";
         header("location:../products.php");
     } else {
         echo "Product Insertion Failed";

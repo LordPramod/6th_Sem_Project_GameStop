@@ -39,7 +39,7 @@
 
                 <?php
                 if (isset($_POST['login'])) {
-                    include "/xampp/htdocs/GameStop/backend/config/connection.php";
+                    include "../../../backend/config/connection.php";
                     error_reporting(0);
                     $email = $_POST['email'];
                     $pass = $_POST['pass'];

@@ -99,9 +99,15 @@ body{
     .btn-login input{
         background-color: #000000;
         color: #FFFFFF;
-        padding: 10px  90px;
+        padding: 1rem 5rem;
         font-size: 1.5rem;
-        border-radius: 8px ;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+    .btn-login input:hover{
+        background-color: #00E701;
+        border-color: transparent;
+        cursor: pointer;
     }
     .forgot span a{
         text-decoration: none;
@@ -110,11 +116,6 @@ body{
         top: 6vh;
         left: 17vh;
         color: #000000;
-    }
-    .btn-login input:hover{
-        background-color :#00E701;
-        border-color: transparent;
-        cursor: pointer;
     }
     .forgot span a :hover{
         color: crimson;
@@ -141,4 +142,18 @@ body{
     
     .signup a:hover{
         color: #00E701;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+        .heading {
+            font-size: 4rem;
+        }
+        .form-div .input-box {
+            width: 90%;
+        }
+        .btn-login input {
+            padding: 0.8rem 4rem;
+            font-size: 1.2rem;
+        }
     }

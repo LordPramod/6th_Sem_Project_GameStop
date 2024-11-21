@@ -13,6 +13,37 @@ session_start();
     <title>Document</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/account.css">
+    <style>
+        /* New CSS for animations and responsiveness */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .account-info p, .billing-info p {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .account-info p:hover, .billing-info p:hover {
+            transform: scale(1.05);
+            color: #007bff; /* Change color on hover */
+        }
+
+        .btn {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .col-lg-6, .col-md-12 {
+                width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
 </head>
 
 <body>

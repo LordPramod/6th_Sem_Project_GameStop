@@ -58,7 +58,7 @@ session_start();
                     <div class="validate">
                         <?php
 
-                        include '/xampp/htdocs/GameStop/backend/config/connection.php';
+                        include '../../../backend/config/connection.php';
 
                         if (isset($_POST['confirm'])) {
                             $email = $_POST['email'];

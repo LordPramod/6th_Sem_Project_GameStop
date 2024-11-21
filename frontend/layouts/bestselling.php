@@ -57,9 +57,7 @@ if ($result->num_rows > 0) {
     </body>
     </html>
     <?php
-} else {
-    echo "No best-selling products found in the last $days days.";
-}
+} 
 
 $connect->close();
 ?>

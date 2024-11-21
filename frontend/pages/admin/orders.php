@@ -10,60 +10,98 @@ $response = mysqli_query($connect, $stmt);
 <html lang="en">
 <style>
     .main-container {
-        width: auto;
-        margin-top: 40px;
-        margin-left: 195px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .orders-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .order-card {
+        background: white;
         border-radius: 10px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        transition: transform 0.2s ease;
     }
 
-    table {
-        border-collapse: collapse;
+    .order-card:hover {
+        transform: translateY(-5px);
     }
 
-    table thead {
-
-        margin-right: 40px;
-        background-color: #F6F9FC;
+    .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
     }
 
-    table thead th {
-        padding: 5px 10px;
+    .order-id {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #2d3748;
+    }
+
+    .order-date {
+        color: #718096;
+        font-size: 0.9rem;
+    }
+
+    .order-info {
+        margin: 10px 0;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+        color: #4a5568;
+    }
+
+    .order-status {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .status-pending {
+        background-color: #f7cb73;
+        color: #744210;
+    }
+
+    .status-completed {
+        background-color: #48bb78;
+        color: white;
+    }
+
+    .status-cancelled {
+        background-color: #f56565;
+        color: white;
+    }
+
+    .order-detail-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: #4299e1;
+        color: white;
         text-align: center;
-        vertical-align: middle;
-        font-family: sans-serif;
-        font-weight: lighter;
-        font-size: 1.3rem;
-        color: #212529;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background-color 0.2s;
     }
 
-    table tbody td {
-        font-size: 1rem;
-    }
-
-    tbody tr td {
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    table td {
-        padding: 10px 40px;
-    }
-
-    table tbody tr:hover {
-        background-color: #dcf0fa;
-    }
-
-    .order_status {
-        color: #FFFFFF;
-        border-radius: 5px;
-
-    }
-
-    table .order_id {
-        text-align: center;
-        vertical-align: middle;
-        padding: 0px 100px;
+    .order-detail-btn:hover {
+        background-color: #3182ce;
     }
 </style>
 
@@ -76,54 +114,44 @@ $response = mysqli_query($connect, $stmt);
 
 <body>
     <div class="main-container">
-        <table>
-            <tr>
-                <thead>
-                    <th class="order_id">Order No</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Payment Gateway</th>
-                    <th>OrderStatus</th>
-                    <th>Order Date</th>
-                    <th>Action</th>
-
-                </thead>
-            </tr>
-
-
-
-            <?php if (mysqli_num_rows($response) > 0) { ?>
-
-                <tbody>
-                    <?php while ($row = mysqli_fetch_assoc($response)) { ?>
-
-                        <tr>
-
-
-
-                            <td><?php echo $oderid = '#' . 6000 . $row['order_id']; ?></td>
-                            <td><?php echo $row['purchase_date']; ?></td>
-                            <td><?php echo  $row['total']; ?></td>
-                            <td><?php echo  $row['payment_method']; ?></td>
-                            <td><?php echo  $row['purchase_date']; ?></td>
-                            <td><span class="order_status"><?php $status = $row['order_status'];
-                                                            if ($status == "pending") {
-                                                                echo '<span style="background-color: #f7cb73;font-size: 1rem; padding: 5px;"> Pending </span>';
-                                                            } elseif ($status == "Completed") {
-                                                                echo '<span style="background-color:green; padding: 5px;"> Completed </span>';
-                                                            } else {
-                                                                echo '<span style="background-color:red; padding: 5px; "> Cancelled </span>';
-                                                            }
-                                                            ?></span></td>
-                            <td><a href="viewSingleProduct.php?id=<?php echo $row['order_id']; ?>">View</a></td>
-                        </tr>
-                <?php }
-                } else {
-                    echo "NO ORDER YET MAKE YOU FIRST ORDER";
-                } ?>
-                </tbody>
-
-        </table>
+        <div class="orders-grid">
+            <?php if (mysqli_num_rows($response) > 0) { 
+                while ($row = mysqli_fetch_assoc($response)) { ?>
+                    <div class="order-card">
+                        <div class="order-header">
+                            <span class="order-id"><?php echo '#' . 6000 . $row['order_id']; ?></span>
+                            <span class="order-date"><?php echo $row['purchase_date']; ?></span>
+                        </div>
+                        
+                        <div class="order-info">
+                            <div class="info-row">
+                                <span>Amount:</span>
+                                <strong>$<?php echo $row['total']; ?></strong>
+                            </div>
+                            <div class="info-row">
+                                <span>Payment:</span>
+                                <strong><?php echo $row['payment_method']; ?></strong>
+                            </div>
+                            <div class="info-row">
+                                <span>Status:</span>
+                                <span class="order-status <?php 
+                                    echo $row['order_status'] == 'pending' ? 'status-pending' : 
+                                        ($row['order_status'] == 'Completed' ? 'status-completed' : 'status-cancelled'); 
+                                ?>">
+                                    <?php echo ucfirst($row['order_status']); ?>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <a href="viewSingleProduct.php?id=<?php echo $row['order_id']; ?>" class="order-detail-btn">
+                            Order Details
+                        </a>
+                    </div>
+                <?php } 
+            } else { ?>
+                <div class="no-orders">No orders yet. Make your first order!</div>
+            <?php } ?>
+        </div>
     </div>
 
 </body>

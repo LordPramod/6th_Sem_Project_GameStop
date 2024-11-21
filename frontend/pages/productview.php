@@ -58,13 +58,22 @@ $row = mysqli_fetch_assoc($response);
             </div>
             <div class="description">
             <span style="font-size: 1.1rem;"><?php echo $row['description'] ?></span>
-        </div>
+         </div>
+         <?php 
+         $sql_query2 = "SELECT pdt_name, product_image FROM products_details where id='$id'";
+         $response2 = mysqli_query($connect, $sql_query2);
+         $row2 = mysqli_fetch_assoc($response2);
+         $pdt_name2 = $row2['pdt_name'];
+         
+         
+         ?>
         </div>
     </div>
-
+    <?php include '../../backend/functions/apiCall.php';?>
+    
 </body>
 
 </html>
-<?php
+<!-- ?php
 include '../layouts/footer.php';
-?>
+?> -->

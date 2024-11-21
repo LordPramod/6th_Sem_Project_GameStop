@@ -1,31 +1,49 @@
 /* Account */
 #account-from{
-    width: 50%;
+    width: 90%;
+    max-width: 600px;
     margin: 35px auto;
     text-align: center;
     padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 .form-group input {
     margin: 5px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-/* #account-form #change-pass-btn{
-    color: #FFFFFF;
-    background-color: #000000;
-} */
-#account-form #change-password-btn:hover{
+.form-group input:focus {
+    border-color: crimson;
+    box-shadow: 0 0 5px crimson;
+}
+#account-form #change-password-btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#account-form #change-password-btn:hover {
     background-color: crimson;
+    transform: scale(1.05);
 }
-.account-info #order-btn,#logout-btn{
+.account-info #order-btn,#logout-btn {
     color: #111111;
     text-decoration: none;
-
+    transition: color 0.3s ease;
 }
-.form-group #change-pass-btn{
+.form-group #change-pass-btn {
     background-color: #000000; 
     color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-.form-group #change-pass-btn :hover{
+.form-group #change-pass-btn:hover {
     background-color: crimson;
     color: black;
-
+    transform: scale(1.05);
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #account-from {
+        width: 95%;
+    }
 }

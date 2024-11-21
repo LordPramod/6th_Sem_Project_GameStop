@@ -1,162 +1,134 @@
-*{ 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Light background */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
 }
-html{
-    scroll-behavior: smooth;
+
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White background for main container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-body{
-    font-family: sans-serif;
+
+.order-container, .payment-container {
+    background-color: #fff; /* White background for cards */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    margin-bottom: 20px;
 }
-.main-container{
+
+h1 {
+    font-size: 24px;
+    color: #333; /* Dark text */
+}
+
+.product-card {
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: center; /* Center text */
+}
+
+.product-card img {
+    width: 100%; /* Responsive image */
+    height: 800px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.quantity {
     display: flex;
-    /* border: black 6px solid ; */
-    height: 90vh;
-    width: 1300px;
-    margin: 0 auto;
-    margin-top: 85px;
-    margin-bottom: 10px;     
-     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-     border-radius: 8px;
-}
-.order-container{
-
-    /* border: 4px red solid; */
-    width: auto;
-    height:635px;
-    FLOAT: left;
-    margin-left: 2%;
-    padding: 1%;
-    overflow-y:scroll;
-    overflow-x: hidden;
- 
-}
-.order-main{
-
-    /* display: flex; */
-    flex-wrap: wrap;
-    margin-top: 40px;
-    margin-left: 40px;
-    /* border: 2px solid red; */
-}
-.content-container h3{
-    margin-left: 30px;
-
-}
-
-.order-container img{
-    height: 100px;
-    width: 100px;
-}
-.payment-container{
-    width: 650px;
-}
-.shipping-container h4{
-    font-family: sans-serif;
-    font-size: 1rem;
-    margin: 10px 0px;
-    margin-left: 80px;
-    
-}
-.shipping-container h2{
-    margin-top: 10px;
-}
-.pay-container{
-    margin-top: 40px;
-    font-weight: bolder;
-}
-.pay-container span{
-    font-family: sans-serif;
-    font-size: 2rem;
-    margin-left: 10px;
-
-}
-.pay-container input{
-    margin-left:20px ;
-}
-table{
-    border-collapse: collapse;
-    
-}
-table thead th{
-    padding: 10px;
-    margin-left: 10px;
-    text-align: center;
-}
-table tbody {
-    padding: 10px;
-    
-}
-table tbody td{
-    font-size: 1rem;
-    text-align: center;
-
-}
-table tbody tr{ 
-    margin-top: 100px;
-}
-.total-container{
-    margin-top: 40px;
-    position: relative;
-    left: 250px;
-}
-.order-container .total-container h1{
-    margin-bottom: 10px;
-    font-size: 2.5rem;
-}
-.order-container .total-container span{
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-}
-.shipping-container h1{
-    margin-top: 15px;
-    margin-left: 40px;
-}
-.shipping-container span{
-    margin-left: 60px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: sans-serif;
-}
-.shipping-container input{
-    margin-bottom: 20px;
-    width: 300px;
+    justify-content: center;
     align-items: center;
-    height: 50px;
+    margin: 10px 0;
+}
+
+.quantity button {
+    background-color: #4CAF50; /* Green */
+    color: white;
     border: none;
-    margin-left: 20px;
-    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px; /* Space between buttons */
 }
-.pay-container h1{
-    margin-bottom: 20px;
 
+.remove-item {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
-.pay-container input[type='radio']{
-    width: 30px;
-    height: 30px;
-    color: crimson;
-        }
-.pay-container .cod{
-    font-size: 2rem;
-}
-.pay-container input[type='submit']{
-    height: 45px;
-    width: 120px;
-    border-radius:8px ;
-    background-color: #111111;
-    border: transparent;
-    color: #ffffff;
-    font-size: 1rem;
-    margin-top: 50px;
-    float: right;
-}
-.pay-container input:hover{
-    background-color: crimson;
-    border: transparent;
 
-}.pay-container  img{
-    height:50px ;
-    width:50px;
+.summary {
+    font-size: 18px;
+    margin-top: 20px;
 }
+
+.summary h2 {
+    color: #d32f2f; /* Dark red for total */
+}
+
+.place-order {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 20px; /* Space above button */
+}
+
+.payment-options {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.payment-method img {
+    width: 100px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for buttons */
+input[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Style for input fields */
+input[type="text"] {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    margin: 5px 0; /* Margin */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Style for product images */
+.pdt-image img {
+    width: 800px; /* Set width */
+    height: 800px; /* Set height */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+}
+
+/* ... existing styles ... */

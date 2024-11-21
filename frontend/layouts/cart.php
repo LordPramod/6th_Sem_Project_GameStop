@@ -69,6 +69,26 @@ if (isset($_SESSION['name'])) {
         color: #FFFFFF;
 
     }
+
+    .card {
+        margin: 15px;
+        transition: transform 0.2s; /* Animation for hover effect */
+    }
+
+    .card:hover {
+        transform: scale(1.05); /* Scale effect on hover */
+    }
+
+    .card-img-top {
+        width: 100%; /* Full width of the card */
+        height: 200px; /* Fixed height for images */
+        object-fit: contain; /* Maintain aspect ratio and show full image */
+    }
+
+    .btn-checkout {
+        text-align: center; /* Center the checkout button */
+        margin-top: 20px;
+    }
 </style>
 
 <body>
@@ -81,49 +101,27 @@ if (isset($_SESSION['name'])) {
     </div>
     <div class="container-fluid">
         <div class="row justify-content-around">
-            <div class="col-sm-12 col-md-6 col-lg-9">
-                <table class="table text-center tabel-bordered">
-                    <thead class="bg-dark text-white fs-5">
-                        <th>Index No.</th>
-                        <th>Product Name</th>
-                        <th>Product Price</th>
-                        <th>Product Quantity</th>
-                        <th>Total Price</th>
-                        <th>Delete</th>
-                        <th>Update</th>
-                    </thead>
-                    <tbody class="bg-light">
-
-
-                        <?php
-                        $i = 1;
-                        while ($row = mysqli_fetch_assoc($stmt)) { ?>
-                            <tr>
-                                <td><?php echo $i ?></td>
-                                <td><?php echo $row['product_name']; ?></td>
-                                <td><?php echo $row['product_price']; ?></td>
-                                <td> <?php echo $row['product_quantity']; ?></td>
-                                <td><?php echo $row['total_amount']; ?></td>
-                                <td><a href="../../backend/functions/deleteCart.php?id=<?php echo $row['cart_id']; ?>">Delete</a>
-                                </td>
-                                <td><a class="update" href="../../backend/functions/updateCart.php?id=<?php echo $row['cart_id']; ?>">Update</a>
-                                </td>
-
-                            </tr>
-                        <?php $i++;
-                        } ?>
-                    </tbody>
-                </table>
-                <div class="btn-checkout">
-
-                    <!-- <a href="../layouts/payment.php"> -->
-                    <form action="cart.php" method="post">
-
-                        <input type="submit" class="btn" id="checkout-btn" value="Buy Now" name="buynow">
-                    </form>
-                    <!-- </a> -->
+            <?php
+            while ($row = mysqli_fetch_assoc($stmt)) { ?>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="../assets/images/<?php echo $row['image']; ?>" class="card-img-top" alt="<?php echo $row['product_name']; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row['product_name']; ?></h5>
+                            <p class="card-text">Price: $<?php echo $row['product_price']; ?></p>
+                            <p class="card-text">Quantity: <?php echo $row['product_quantity']; ?></p>
+                            <p class="card-text">Total: $<?php echo $row['total_amount']; ?></p>
+                            <a href="../../backend/functions/deleteCart.php?id=<?php echo $row['cart_id']; ?>" class="btn btn-danger">Delete</a>
+                            <a href="../../backend/functions/updateCart.php?id=<?php echo $row['cart_id']; ?>" class="btn btn-warning">Update</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            <?php } ?>
+        </div>
+        <div class="btn-checkout">
+            <form action="cart.php" method="post">
+                <input type="submit" class="btn btn-primary" id="checkout-btn" value="Buy Now" name="buynow">
+            </form>
         </div>
     </div>
 

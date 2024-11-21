@@ -10,81 +10,96 @@ $response = mysqli_query($connect, $stmt);
 <html lang="en">
 <style>
     .main-container {
-        width: 100%;
-        margin-top: 40px;
-        margin-left: 195px;
+        width: 95%;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+    }
 
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    .orders-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .order-card {
+        background: white;
         border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    table {
-        border-collapse: collapse;
+    .order-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
-    table thead {
-
-        margin-right: 40px;
-        background-color: #F6F9FC;
+    .order-id {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 15px;
     }
 
-    table thead th {
-        padding: 5px 6px;
-        text-align: center;
-        vertical-align: middle;
-        font-family: sans-serif;
-        font-weight: lighter;
-        font-size: 1.3rem;
-        color: #212529;
+    .order-info {
+        margin: 10px 0;
+        color: #666;
     }
 
-    table tbody td {
-        font-size: 1rem;
-    }
-
-    tbody tr td {
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    table td {
-        padding: 10px 40px;
-    }
-
-    table tbody tr:hover {
-        background-color: #dcf0fa;
-    }
-
-    .order_status {
+    .order-status {
+        display: inline-block;
         background-color: #f7cb73;
         color: #FFFFFF;
-        font-size: 1rem;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .btn {
+        flex: 1;
+        padding: 8px 16px;
         border: none;
-        padding: 4px;
-        border-radius: 3px;
-
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.1s, opacity 0.1s;
     }
 
-    table .order_id {
-        text-align: center;
-        vertical-align: middle;
-
+    .btn:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
     }
 
-    table .order_id {
-        text-align: center;
-        vertical-align: middle;
+    .btn:active {
+        transform: scale(0.98);
     }
 
-    tbody td a button {
-        background-color: crimson;
-        color: #FFFFFF;
-        border: none;
-        border-radius: 3px;
+    .btn-complete {
+        background-color: #2ecc71;
     }
 
-    tbody td a .complete {
-        background-color: green;
+    .btn-cancel {
+        background-color: #e74c3c;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .main-container {
+            margin: 20px auto;
+            width: 90%;
+        }
+        
+        .orders-grid {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
@@ -98,46 +113,27 @@ $response = mysqli_query($connect, $stmt);
 <body>
     <div class="main-container">
         <h1 style="text-align: center; color:crimson;">Pending Orders</h1>
-        <table>
-            <tr>
-                <thead>
-                    <th class="order_id">Order No</th>
-                    <th>Date</th>
-                    <th>Payment Gateway</th>
-                    <th>OrderStatus</th>
-                    <th>Purchase Date</th>
-                    <th class="action">Action</th>
-
-                </thead>
-            </tr>
-
-
-
+        <div class="orders-grid">
             <?php if (mysqli_num_rows($response) > 0) { ?>
-
-                <tbody>
-                    <?php while ($row = mysqli_fetch_assoc($response)) { ?>
-
-                        <tr>
-
-
-
-                            <td><?php echo $oderid = '#' . 6000 . $row['order_id']; ?></td>
-                            <td><?php echo $row['purchase_date']; ?></td>
-                            <td><?php echo  $row['payment_method']; ?></td>
-                            <td><span class="order_status"><?php echo $oderid =  $row['order_status']; ?></span></td>
-                            <td><?php echo  $row['purchase_date']; ?></td>
-                            <td><a href="../../../backend/functions/updateOrderStatus.php?id=<?php echo $row['order_id']; ?>"><button class="complete">Complete</button></a> </td>
-                            <td><a href="../../../backend/functions/cancelOrder.php?id=<?php echo $row['order_id']; ?>"><button>Cancel</button></a>
-                            </td>
-                        </tr>
+                <?php while ($row = mysqli_fetch_assoc($response)) { ?>
+                    <div class="order-card">
+                        <div class="order-id">Order No: #<?php echo 6000 . $row['order_id']; ?></div>
+                        <div class="order-info">
+                            <p>Date: <?php echo $row['purchase_date']; ?></p>
+                            <p>Payment Gateway: <?php echo $row['payment_method']; ?></p>
+                            <p>Order Status: <span class="order_status"><?php echo $row['order_status']; ?></span></p>
+                            <p>Purchase Date: <?php echo $row['purchase_date']; ?></p>
+                        </div>
+                        <div class="button-group">
+                            <a href="../../../backend/functions/updateOrderStatus.php?id=<?php echo $row['order_id']; ?>"><button class="btn btn-complete">Complete</button></a>
+                            <a href="../../../backend/functions/cancelOrder.php?id=<?php echo $row['order_id']; ?>"><button class="btn btn-cancel">Cancel</button></a>
+                        </div>
+                    </div>
                 <?php }
                 } else {
                     echo "NO ORDER YET MAKE YOU FIRST ORDER";
                 } ?>
-                </tbody>
-
-        </table>
+        </div>
     </div>
 
 </body>

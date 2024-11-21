@@ -128,3 +128,44 @@ body{
 /* Test */
 
   /* Test ends here  */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-logo a {
+        left: 10px; /* Adjusted for smaller screens */
+        font-size: 1.5rem; /* Smaller font size */
+    }
+    .container-center input {
+        width: 90%; /* Full width on smaller screens */
+        left: 5%; /* Centering */
+    }
+    .btn-search input {
+        width: 60px; /* Smaller button */
+        margin-left: 10px; /* Adjusted margin */
+    }
+    .icon-container {
+        margin-left: auto; /* Align icons to the right */
+    }
+}
+
+/* Enhanced Hover Effects */
+.container-nav ul li a {
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+.container-nav ul li a:hover {
+    color: #00E701;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Button Click Animation */
+.btn-search input {
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+.btn-search input:active {
+    transform: scale(0.95); /* Button click effect */
+}
+
+/* Additional Gaps for Better UI */
+.container-nav ul li {
+    margin-right: 60px; /* Increased gap */
+}
